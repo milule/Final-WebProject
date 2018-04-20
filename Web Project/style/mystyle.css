@@ -48,7 +48,7 @@ text-decoration: none;
 	list-style-type: none;
 	display: inline-block;
 	letter-spacing: 1px;
-	font-family: 'BebasNeue Regular';
+	font-family: 'QuickSand';
 	font-size: 12.7px;	
 	color: #E7E7E7;
 	margin-bottom: 0px;
@@ -61,7 +61,7 @@ text-decoration: none;
  	list-style-type: none;
  	display: inline-block;
  	
-	font-family: 'BebasNeue Regular';
+	font-family: 'QuickSand';
 	font-size: 9pt;
 	color: #E7E7E7;
 	margin-bottom: 0px;
@@ -145,11 +145,11 @@ padding-left: 5%;
 	height:69px; 
 }
 @font-face {
-  font-family: "BebasNeue Regular";
-    src: url(../source/fonts/BebasNeue-Regular.otf) format("truetype");
+  font-family: "QuickSand";
+    src: url(../source/fonts/Quicksand-Medium.otf) format("truetype");
 }
   #navbarontop > li > a {
-  	font-family: 'BebasNeue Regular';
+  	font-family: 'Quicksand';
   	font-size: 17px;
   	color: #313943;
     padding-top: 5px;
@@ -172,7 +172,7 @@ padding-left: 5%;
  	background: none;
  	background-color: none;
  	border: 2px solid #C59E47;
- 	font-family: 'BebasNeue Regular';
+ 	font-family: 'Quicksand';
  	margin-left: 60px;
   	font-size: 16.99px;
   	color: #313943;
@@ -209,7 +209,7 @@ padding-left: 5%;
   border-bottom: 2px solid #C59E47; 
 }
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-	font-family: 'BebasNeue Regular';
+	font-family: 'Quicksand';
 	font-size: 13pt;
 	color: #000;
 	background-color: rgba(255,255,255,.5);
@@ -335,8 +335,8 @@ float: right;
 
 
 @font-face{
-	font-family: "OpenSans Semibold";
-	src: url(../source/fonts/OpenSans-Semibold.ttf) format("truetype");
+	font-family: "QuickSand Semibold";
+	src: url(../source/fonts/QuickSand-Semibold.ttf) format("truetype");
 
 }
 .carousel-caption{
@@ -344,17 +344,17 @@ float: right;
 }
 .carousel-caption>h2{
 	text-align: left;
-	font-family: 'OpenSans Semibold';
+	font-family: 'QuickSand Semibold';
 	font-size: 25.12pt;
 	text-shadow: 0 0px 0px rgba(0, 0, 0, .0);
 
 }
 @font-face{
-	font-family: "OpenSans Regular";
-	src:url(../source/fonts/OpenSans-Regular.ttf) format("truetype");
+	font-family: "Quicksand";
+	src:url(../source/fonts/Quicksand-Medium.ttf) format("truetype");
 }
 .carousel-caption>h2>p{
-font-family: :'OpenSans Regular';
+font-family: :'Quicksand-Medium';
 font-size: 15.88pt;
 }
 .carousel-caption {
@@ -404,7 +404,7 @@ font-size: 10pt;
 	max-width: 1349px;
 }
 .searchtxt>h1{
-	font-family: "OpenSans Semibold";
+	font-family: "Quicksand Medium";
 	font-size: 22pt;
 	color: #fff;
 	margin-top: 14px;
@@ -436,7 +436,7 @@ font-size: 10pt;
 	margin-right: 9px;
 }
 .navbarborder>li>a{
-	font-family: "OpenSans Regular";
+	font-family: "Quicksand-Medium";
 	font-size: 13pt;
 	color: #fff !important;
 	background-color: none;
@@ -480,7 +480,7 @@ font-size: 10pt;
 }
 .searchform::-webkit-input-placeholder {
     color: #fff;
-    font-family: "OpenSans Regular";
+    font-family: "Quicksand-Medium";
     font-size:13pt;
     box-shadow: 0px;
  
@@ -489,21 +489,21 @@ font-size: 10pt;
 .searchform::-moz-placeholder {
     /* FF 19+ */
     color: #fff;
-    font-family: "OpenSans Regular";
+    font-family: "Quicksand-Medium";
     font-size: 13pt;
     box-shadow: 0px;
  
 
 }
 .priceslider{
-	font-family: "OpenSans Regular";
+	font-family: "Quicksand-Medium";
 	background-color: none;
 	background: none;
 	border: none;
 	color: #fff;
 }
 .slidertxt{
-	font-family: "OpenSans Regular";
+	font-family: "Quicksand-Medium";
 	color: #fff;
 }
 .searchnav{
@@ -693,7 +693,7 @@ padding-left: 0px;
  	position: absolute;
  	left: -200px;
  	top:-20px;
- 	font-family: "OpenSans Semibold";
+ 	font-family: "Quicksand Medium";
 	font-size: 22pt;
 	color: #fff;
 
@@ -727,11 +727,11 @@ font-weight: bold;
  
 /*   ---------------------------   fetured cars   ---------------------------------    */
 @font-face{
-	font-family: "OpenSans-Light";
-	src: url(../source/fonts/OpenSans-Light.ttf) format("truetype");
+	font-family: "Quicksand-Medium";
+	src: url(../source/fonts/QuickSand-Medium.ttf) format("truetype");
 }
 .feturedsection>h1{
-	font-family: "OpenSans-Light";
+	font-family: "QuickSand-Light";
 	font-size: 41px;
 	padding-top: 46px;
 	padding-bottom: 50px;
@@ -807,7 +807,7 @@ font-weight: bold;
  
 }
 .featurecontant>h1{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 19.8px;
 	text-align: center;
 	color: #5B5B5B;
@@ -816,13 +816,13 @@ font-weight: bold;
 
 }
 .featurecontant>p{
-	font-family: "OpenSans Regular";
-	font-size: 11.44px;
+	font-family: "QuickSand-Medium";
+	font-size: 15px;
 	text-align: center;
 	color: #5B5B5B;
 }
 .featurecontant>h2{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 12.41pt;
 	color: #020243;
 	text-align: center;
@@ -833,7 +833,7 @@ font-weight: bold;
 .featurecontant>button{
 	background: #020243;
 	border: 1px solid #020243;
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 19px;
 	color:#fff;
 	letter-spacing: 5px;
@@ -874,12 +874,12 @@ font-weight: bold;
 }
 #readmore>h1{
 	text-align: center;
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	color: #5B5B5B;
 	font-size: 19.8px;
 }
 #readmore>p{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 11.44px;
 	text-align: center;
 	color: #5B5B5B;
@@ -889,7 +889,7 @@ font-weight: bold;
 #readmore>button{
 	background: none;
 	border: 1px solid #020243; 
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 19px;
 	color:#020243;
 	letter-spacing: 5px;
@@ -918,12 +918,12 @@ font-weight: bold;
 }
 #readmore2>h1{
 	text-align: center;
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	color: #5B5B5B;
 	font-size: 19.8px;
 }
 #readmore2>p{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 11.44px;
 	text-align: center;
 	color: #5B5B5B;
@@ -933,7 +933,7 @@ font-weight: bold;
 #readmore2>button{
 	background: none;
 	border: 1px solid #020243; 
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 19px;
 	color:#020243;
 	letter-spacing: 5px;
@@ -1028,7 +1028,7 @@ margin-left: auto;
 	 max-width: 100%;
 }
 .latestcars>h1{
-	font-family: "OpenSans-Light";
+	font-family: "QuickSand-Light";
 	font-size: 41px;
 	letter-spacing: 10px;
 	padding-top: 66px;
@@ -1036,13 +1036,13 @@ margin-left: auto;
 	color: #020243;
 }
 .sortby{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 16px;
 	color: #262626;
 }
 .latestlist{
 	color: #6D6D6D;
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 14px;
 	color: #262626;
  
@@ -1060,8 +1060,8 @@ margin-left: auto;
 }
 .latest-navleft>li>a{
 	color: #6D6D6D;
-	font-family: "OpenSans Regular";
-	font-size: 14.8px;
+	font-family: "QuickSand-Medium";
+	font-size: 17px;
 	border: 0px;
 	padding-top: 0px;
  
@@ -1139,7 +1139,7 @@ font-weight: bold;
 }
 @media screen and (min-width: 768px) and (max-width: 1067px){
 .sortby{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 14px;
 	color: #262626;
 }
@@ -1194,19 +1194,19 @@ padding-left: 0px;
 	padding-top: 40px;
 }
 .simpletxt>h3{
-	font-family: "OpenSans Semibold";
+	font-family: "QuickSand Semibold";
 	font-size: 13.6px;
 	color:#E7E7E7;
 	margin: 0px;
 }
 .simpletxt>p{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 11.2px;
 	color: #E7E7E7;
 	padding-top: 7px;
 }
 .simpletxt>h4{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size:11.3px;
 	font-weight: bold;
 	text-align: center;
@@ -1218,7 +1218,7 @@ padding-left: 0px;
 .simpletxt>button{
 	background: none;
 	border: 1px solid #fff;
-	font-family:"OpenSans Regular";
+	font-family:"QuickSand-Medium";
 	color: #fff;
 	margin-bottom: 14px;
 }
@@ -1226,7 +1226,7 @@ padding-left: 0px;
 	padding-bottom: 42px;
 }
 .wishtxt .paragraph1{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size:11.32px;
 	color: #fff;
 	float: left;
@@ -1234,7 +1234,7 @@ padding-left: 0px;
 
 }
 .wishtxt .paragraph2{
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	font-size: 11.32px;
 	color: #fff;
 	float: right;
@@ -1286,11 +1286,11 @@ padding-left: 0px;
 	z-index: 99;
 }
 @font-face{
-  font-family: "OpenSans Bold";
-  src: url(../source/fonts/OpenSans-Bold.ttf) format("truetype");
+  font-family: "QuickSand Bold";
+  src: url(../source/fonts/QuickSand-Bold.ttf) format("truetype");
 }
 .leftside>h1{
-	font-family: "OpenSans Bold";
+	font-family: "QuickSand Bold";
 	top:39%;
 	left: 13.2%;
 	position: absolute;
@@ -1301,7 +1301,7 @@ padding-left: 0px;
 }
 .leftside>p{
 	position: absolute;
-	font-family: "OpenSans Regular";
+	font-family: "QuickSand-Medium";
 	top:47.5%;
 	left: 13.2%;
 	font-size: 20px;
@@ -1324,7 +1324,7 @@ padding-left: 0px;
 	position: absolute;
 	top:34%;
 	left:25%;
-	font-family: "OpenSans-Light";
+	font-family: "QuickSand-Light";
 	font-size: 26.8px;
 	color:#fff;
 	background: none;
@@ -1369,7 +1369,7 @@ padding-left: 0px;
 	z-index: 99;
 	background: none;
 	border: 1px solid #fff;
-	font-family: "OpenSans-Light";
+	font-family: "QuickSand-Light";
 	font-size: 31.5px;
 	color: #fff;
 	letter-spacing: 11px;
@@ -1471,7 +1471,7 @@ left: 0%;
  	 padding-top: 49px;
  }
  .bottommenu>ul>li>a{
- 	font-family: "OpenSans Regular";
+ 	font-family: "QuickSand-Medium";
  	font-size: 17px;
  	letter-spacing: 4px;
  	color: #191919;
@@ -1480,7 +1480,7 @@ left: 0%;
   background-color: none;
   background: none;
   border: none;
-  	font-family: "OpenSans Regular";
+  	font-family: "QuickSand-Medium";
  	font-size: 17px;
  	letter-spacing: 4px;
  	color: #191919;
@@ -1498,7 +1498,7 @@ left: 0%;
 }
   .bottommenu>p{
   	text-align: center;
-  	font-family: "OpenSans Regular";
+  	font-family: "QuickSand-Medium";
   	font-size: 13px;
   	color: #707070;
   	padding-top: 105px;

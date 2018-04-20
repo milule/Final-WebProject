@@ -16,24 +16,29 @@ $(function() {
 		itemSelector: '.col-xs-12',
 		getSortData: {
 			name: '.name',
-			price: '.price parseInt'
+			price: '.price parseInt',
+			count: '.countsp parseInt',
+			view: '.countview parseInt',
+			date: function (itemElem) {
+                return Date.parse($(itemElem).find('.date').text());
+            }
 		}
 	});
 	$('.alphSort').on('click', function(e){
 		e.preventDefault();
 		container.isotope({ sortBy: 'name'});
 	});
-	$('.prcBtnH').on('click', function(e){
+	$('.clickview').on('click', function(e){
 		e.preventDefault();
-		container.isotope({ sortBy: 'price', sortAscending: false});
+		container.isotope({ sortBy: 'view', sortAscending: false});
 	});
-	$('.prcBtnL').on('click', function(e){
+	$('.clickcount').on('click', function(e){
 		e.preventDefault();
-		container.isotope({ sortBy: 'price', sortAscending: true});
+		container.isotope({ sortBy: 'count', sortAscending: false});
 	});
-	$('.prcBtnR').on('click',function(e){
+	$('.clicknew').on('click',function(e){
 		e.preventDefault();
-		container.isotope({sortBy:'random'});
+		container.isotope({sortBy:'date',sortAscending: false});
 	});
 	$('.prcBtnO').on('click',function(e){
 		e.preventDefault();
