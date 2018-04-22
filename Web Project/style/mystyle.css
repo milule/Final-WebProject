@@ -145,11 +145,11 @@ padding-left: 5%;
 	height:69px; 
 }
 @font-face {
-  font-family: "QuickSand";
-    src: url(../source/fonts/Quicksand-Medium.otf) format("truetype");
+  font-family: "Quicksand-Bold";
+    src: url(../source/fonts/Quicksand-Bold.ttf) format("truetype");
 }
   #navbarontop > li > a {
-  	font-family: 'Quicksand';
+  	font-family: 'QuickSand-Bold';
   	font-size: 17px;
   	color: #313943;
     padding-top: 5px;
@@ -335,8 +335,8 @@ float: right;
 
 
 @font-face{
-	font-family: "QuickSand Semibold";
-	src: url(../source/fonts/QuickSand-Semibold.ttf) format("truetype");
+	font-family: "QuickSand-Medium";
+	src: url(../source/fonts/QuickSand-Medium.ttf) format("truetype");
 
 }
 .carousel-caption{
@@ -344,13 +344,13 @@ float: right;
 }
 .carousel-caption>h2{
 	text-align: left;
-	font-family: 'QuickSand Semibold';
+	font-family: 'QuickSand-Medium';
 	font-size: 25.12pt;
 	text-shadow: 0 0px 0px rgba(0, 0, 0, .0);
 
 }
 @font-face{
-	font-family: "Quicksand";
+	font-family: "Quicksand-Medium";
 	src:url(../source/fonts/Quicksand-Medium.ttf) format("truetype");
 }
 .carousel-caption>h2>p{
@@ -404,7 +404,7 @@ font-size: 10pt;
 	max-width: 1349px;
 }
 .searchtxt>h1{
-	font-family: "Quicksand Medium";
+	font-family: "Quicksand-Medium";
 	font-size: 22pt;
 	color: #fff;
 	margin-top: 14px;
@@ -693,7 +693,7 @@ padding-left: 0px;
  	position: absolute;
  	left: -200px;
  	top:-20px;
- 	font-family: "Quicksand Medium";
+ 	font-family: "Quicksand-Medium";
 	font-size: 22pt;
 	color: #fff;
 
@@ -1194,7 +1194,7 @@ padding-left: 0px;
 	padding-top: 40px;
 }
 .simpletxt>h3{
-	font-family: "QuickSand Semibold";
+	font-family: "QuickSand-Meidum";
 	font-size: 13.6px;
 	color:#E7E7E7;
 	margin: 0px;
@@ -1286,8 +1286,8 @@ padding-left: 0px;
 	z-index: 99;
 }
 @font-face{
-  font-family: "QuickSand Bold";
-  src: url(../source/fonts/QuickSand-Bold.ttf) format("truetype");
+  font-family: "QuickSand-Meidum";
+  src: url(../source/fonts/QuickSand-Meidum.ttf) format("truetype");
 }
 .leftside>h1{
 	font-family: "QuickSand Bold";
@@ -1616,14 +1616,14 @@ left: 0%;
 
 
 @font-face{
-	font-family: "Roboto Light";
-	src: url(../source/fonts/Roboto-Light.ttf) format("truetype");
+	font-family: "Quicksand-Medium";
+	src: url(../source/fonts/Quicksand-Medium.ttf) format("truetype");
 
 }
 .footer{
 background-color: #191919;
 color: #fff;
-font-family: "Roboto Light";
+font-family: "Quicksand-Medium";
 font-size: 12px;
 
 width: 100%;
@@ -1691,8 +1691,13 @@ height: 30px;
 }
 
 
+.garm{
+	font-size: 50px;
+  background: -webkit-linear-gradient(#339966
 
 
-
-
- 
+, #006699
+);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
