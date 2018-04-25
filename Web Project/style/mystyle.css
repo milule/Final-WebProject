@@ -1194,7 +1194,7 @@ padding-left: 0px;
 	padding-top: 40px;
 }
 .simpletxt>h3{
-	font-family: "QuickSand-Meidum";
+	font-family: "QuickSand-Medium";
 	font-size: 13.6px;
 	color:#E7E7E7;
 	margin: 0px;
@@ -1286,8 +1286,8 @@ padding-left: 0px;
 	z-index: 99;
 }
 @font-face{
-  font-family: "QuickSand-Meidum";
-  src: url(../source/fonts/QuickSand-Meidum.ttf) format("truetype");
+  font-family: "QuickSand-Medium";
+  src: url(../source/fonts/QuickSand-Medium.ttf) format("truetype");
 }
 .leftside>h1{
 	font-family: "QuickSand Bold";
