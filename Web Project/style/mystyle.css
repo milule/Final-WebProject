@@ -328,7 +328,14 @@ float: right;
   }
 }
 
-
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  opacity: 0.8;
+  background-color: white;
+}
 
 /* ------------------------ End Navbar On Top -----------------*/
 /*------------------------- Start Carousel --------------------*/
@@ -1750,7 +1757,7 @@ height: 30px;
 }
 
 .modal img.avatar {
-    width: 40%;
+    width: 10%;
     border-radius: 50%;
 }
 
@@ -1946,3 +1953,6 @@ height: 30px;
     width: 100%;
   }
 } 
+
+
+
