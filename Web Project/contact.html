@@ -172,7 +172,7 @@
                         </form>
                         <ul class="nav navbar-nav navbarborder">
                             <li class="li-category">
-                                <a class="btn  dropdown-toggle btn-costume" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Phân loại<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                                <a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Phân loại<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
                                 <ul class="dropdown-menu" id="mydd">
                                     <li><a href="#">Sport</a></li>
                                     <li><a href="#">Bus</a></li>
@@ -180,30 +180,21 @@
                                     <li><a href="#">Luxury</a></li>
                                 </ul>
                             </li>
-                            <li class="li-minyear"><a class="btn  dropdown-toggle btn-costume" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Min Year <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                            <li class="li-Giá"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Giá<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
                             <ul class="dropdown-menu" id="mydd2">
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="3">3</a></li>
+                                <li><a href="#">Cao</a></li>
+                                <li><a href="#">Trung bình</a></li>
+                                <li><a href="3">Thấp</a></li>
                             </ul>
                         </li>
-                        <li class="li-maxyear"><a class="btn dropdown-toggle btn-costume" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Max Year <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                        <li class="li-nxs"><a class="btn dropdown-toggle btn-costume"  id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Nhà SX<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
                         <ul class="dropdown-menu" id="mydd3">
-                            <li><a href="#">2016</a></li>
-                            <li><a href="#">2017</a></li>
-                            <li><a href="#">2018</a></li>
+                            <li><a href="#">Ferrari</a></li>
+                            <li><a href="#">Bugatti</a></li>
+                            <li><a href="#">Pagani</a></li>
                         </ul>
                     </li>
-                    <li class="li-slideprice">
-                        <p>
-                            <label class="slidertxt" for="amount">Price </label>
-                            <input class="priceslider" type="text" id="amount" readonly="readonly">
-                        </p>
-                        <div id="slider-range"></div>
-                    </li>
-                    <li class="li-search">
-                        <button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button>
-                    </li>
+                    <li class="li-search" > <button class="btn-primary"><span class="glyphicon glyphicon-search" style="font-size: 30px"></span></button></li>
                 </ul>
             </div>
         </nav>
@@ -258,7 +249,9 @@ marker.setMap(map);
 </script>
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
 <script type="text/javascript" src="source/js/myscript.js"></script>
+<script type="text/javascript" src="source/js/isotope.js"></script>
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+
 <script>
 $(window).resize(function() {
 var new_height = $("#image_border").height();
@@ -272,6 +265,7 @@ $("#googleMap").height(new_height);
 google.maps.event.addDomListener(window, 'load', initialize());
 });
 </script>
+
 <script type="text/javascript" src="source/js/myscript.js"></script>
 <script type="text/javascript" src="source/cart/animsition.min.js"></script>
 <script src="source/cart/main.js"></script>

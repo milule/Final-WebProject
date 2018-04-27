@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="source/cart/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="source/cart/util.css">
 		<link rel="stylesheet" type="text/css" href="source/cart/main.css">
+		<link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
 	</head>
 	<body>
 		<!-- Header -->
@@ -218,7 +219,9 @@
 							<a href="Detail1.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							<a class="btn-addcart">
+								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-4" style="text-align: center">
@@ -230,7 +233,9 @@
 							<a href="Detail1.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							<a class="btn-addcart">
+								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-4" style="text-align: center">
@@ -242,7 +247,9 @@
 							<a href="Detail1.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							<a class="btn-addcart">
+								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-4" style="text-align: center">
@@ -254,7 +261,9 @@
 							<a href="Detail1.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							<a class="btn-addcart">
+								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-4" style="text-align: center">
@@ -266,7 +275,9 @@
 							<a href="Detail1.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							<a class="btn-addcart">
+								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-4" style="text-align: center">
@@ -278,7 +289,9 @@
 							<a href="Detail1.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							<a class="btn-addcart">
+								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-4" style="text-align: center">
@@ -290,7 +303,9 @@
 							<a href="Detail1.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							<a class="btn-addcart">
+								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							</a>
 						</div>
 					</div>
 					<div class="col-md-4" style="text-align: center">
@@ -302,7 +317,9 @@
 							<a href="Detail1.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							<a class="btn-addcart">
+								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -327,5 +344,20 @@
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="source/cart/animsition.min.js"></script>
 <script src="source/cart/main.js"></script>
+
+<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+<script type="text/javascript">
+        /*document.getElementById('addCart').onclick = function(){
+        swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
+    };*/
+
+    $('.btn-addcart').each(function(){
+            
+            $(this).on('click', function(){
+                swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
+            });
+        });
+</script>
+
 </body>
 </html>

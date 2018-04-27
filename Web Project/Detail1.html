@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=vietnamese">
         <link rel="stylesheet" type="text/css" href="style/mystyle.css">
         <link rel="stylesheet" type="text/css" href="style/w3.css">
+        <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
         <style>
         .mySlides {
         display: none
@@ -239,18 +240,24 @@
                 </div>
             </div>
             <div class="col-md-6 " style="padding-left: 50px;position: center; ">
-                <div class="col-md-7 ">
+                <div class="col-md-7">
                     <h1 style="color: #990000 ">700.000&euro;</h1>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Số lượt xem: 5000</h4>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Số lượng bán: 100</h4>
-                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Mô tả: Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực</h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  
+                        Mô tả: Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực
+                    </h4>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Xuất sứ: Modena, Italy</h4>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Loại: Sport</h4>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Nhà sản xuất: Ferrari</h4>
-                    <button class="btn btn-danger btn-lg ">Đặt mua hàng  <span class="glyphicon glyphicon-shopping-cart "></span></button>
-                    <button class="btn btn-primary btn-lg ">Đặt mua góp  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                    <a class="btn-addcart">
+                        <button class="btn btn-danger btn-lg ">Đặt mua hàng  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                    </a>
+                    <a class="btn-addcart">
+                        <button class="btn btn-primary btn-lg ">Đặt mua góp  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                    </a>
                 </div>
-                <div class="col-md-5 ">
+                <div class="col-md-5 "> 
                     <div class="panel panel-default ">
                         <div class="panel-body ">
                             <h4 style="color: green ">Quà Khuyến Mãi</h4>
@@ -669,5 +676,20 @@ x[slideIndex - 1].style.display = "block";
 dots[slideIndex - 1].className += " w3-opacity-off";
 }
 </script>
+
+<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+<script type="text/javascript">
+        /*document.getElementById('addCart').onclick = function(){
+        swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
+    };*/
+
+    $('.btn-addcart').each(function(){
+            
+            $(this).on('click', function(){
+                swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
+            });
+        });
+</script>
+
 </body>
 </html>

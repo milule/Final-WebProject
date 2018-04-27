@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="source/cart/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="source/cart/util.css">
         <link rel="stylesheet" type="text/css" href="source/cart/main.css">
+        <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
         <style>
         .mySlides {
         display: none
@@ -247,8 +248,12 @@
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Xuất sứ: Modena, Italy</h4>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Loại: Sport</h4>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Nhà sản xuất: Chevrolet</h4>
-                    <button class="btn btn-danger btn-lg ">Đặt mua hàng  <span class="glyphicon glyphicon-shopping-cart "></span></button>
-                    <button class="btn btn-primary btn-lg ">Đặt mua góp  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                    <a class="btn-addcart">
+                        <button class="btn btn-danger btn-lg ">Đặt mua hàng  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                    </a>
+                    <a class="btn-addcart">
+                        <button class="btn btn-primary btn-lg ">Đặt mua góp  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                    </a>
                 </div>
                 <div class="col-md-5 ">
                     <div class="panel panel-default ">
@@ -668,5 +673,20 @@ x[slideIndex - 1].style.display = "block";
 dots[slideIndex - 1].className += " w3-opacity-off";
 }
 </script>
+
+<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+<script type="text/javascript">
+        /*document.getElementById('addCart').onclick = function(){
+        swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
+    };*/
+
+    $('.btn-addcart').each(function(){
+            
+            $(this).on('click', function(){
+                swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
+            });
+        });
+</script>
+
 </body>
 </html>
