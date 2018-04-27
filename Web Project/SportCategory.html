@@ -1,364 +1,414 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Car Website</title>
-		<meta name="description" content="Nothing">
-		<meta name="author" content="Web Quả Tạ">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=vietnamese">
-		<link rel="stylesheet" type="text/css" href="style/mystyle.css">
-		<link rel="stylesheet" type="text/css" href="source/cart/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="source/cart/util.css">
-		<link rel="stylesheet" type="text/css" href="source/cart/main.css">
-		<link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
-	</head>
-	<body>
-		<!-- Header -->
-		<div class="allcontain">
-			<div class="header">
-				<ul class="givusacall">
-					<li>Give us a call : +66666666 </li>
-				</ul>
-				<ul class="logreg">
-					<li><a href="#">Login </a> </li>
-					<li><a href="#"><span class="register">Register</span></a></li>
-				</ul>
-			</div>
-			<!-- Navbar Up -->
-			<nav class="topnavbar navbar-default topnav">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
-						<span class="sr-only"> Toggle navigaion</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
-					</div>
-				</div>
-				<div class="collapse navbar-collapse" id="myHeader">
-					<ul class="nav navbar-nav" id="navbarontop">
-						<li class="active"><a href="index.html">Trang chủ</a> </li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle"	data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phân loại<span class="caret"></span></a>
-							<ul class="dropdown-menu dropdowncostume">
-								<li><a href="SportCategory.html">Sport</a></li>
-								<li><a href="SportCategory.html">Bus</a></li>
-								<li><a href="SportCategory.html">Crossover</a></li>
-								<li><a href="SportCategory.html">Luxury</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hãng sản xuất<span class="caret"></span></a>
-							<ul class="dropdown-menu dropdowncostume">
-								<li><a href="FerrariCategory.html">Ferrari</a></li>
-								<li><a href="FerrariCategory.html">Bugatti</a></li>
-								<li><a href="FerrariCategory.html">Pagani</a></li>
-								<li><a href="FerrariCategory.html">Lamborghini</a></li>
-								<li><a href="FerrariCategory.html">Porsche</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="contact.html">Liên hệ</a>
-							
-						</li>
-						<!-- Icon cart-->
-						<li>
-							<div class="header-wrapicon2">
-								<img src="image/cart/shopping_cart.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-								<span class="header-icons-noti">3</span>
-								<!-- Header cart noti -->
-								<div class="header-cart header-dropdown">
-									<ul class="header-cart-wrapitem">
-										<li class="header-cart-item">
-											<div class="header-cart-item-img">
-												<img src="image/cart/car1.jpg" alt="IMG">
-											</div>
-											<div class="header-cart-item-txt">
-												<a href="Detail1.html" class="header-cart-item-name">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Website</title>
+    <meta name="description" content="Nothing">
+    <meta name="author" content="Web Quả Tạ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=vietnamese">
+    <link rel="stylesheet" type="text/css" href="style/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="source/cart/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="source/cart/util.css">
+    <link rel="stylesheet" type="text/css" href="source/cart/main.css">
+    <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="allcontain">
+        <div class="header">
+            <ul class="givusacall">
+                <li>Give us a call : +66666666 </li>
+            </ul>
+            <ul class="logreg">
+                <li><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login </a>
+                    <div id="id01" class="modal">
+                        <form class="modal-content animate" action="/action_page.php">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <img src="image/avatar.png" alt="Avatar" class="avatar">
+                            </div>
+                            <div class="container">
+                                <label for="uname"><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <button type="submit">Login</button>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                                </label>
+                            </div>
+                            <div class="container" style="background-color:#f1f1f1">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                <span class="psw">Forgot <a href="#">password?</a></span>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span class="register">Register</span></a>
+                    <div id="id02" class="modal2">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <form class="modal-content" action="/action_page.php">
+                            <div class="container">
+                                <h1>Sign Up</h1>
+                                <p>Please fill in this form to create an account.</p>
+                                <hr>
+                                <label for="email"><b>Email</b></label>
+                                <input type="text" placeholder="Enter Email" name="email" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <label for="psw-repeat"><b>Repeat Password</b></label>
+                                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                                </label>
+                                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                                <div class="clearfix">
+                                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                                    <button type="submit" class="signupbtn">Sign Up</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Navbar Up -->
+        <nav class="topnavbar navbar-default topnav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
+                        <span class="sr-only"> Toggle navigaion</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myHeader">
+                <ul class="nav navbar-nav" id="navbarontop">
+                    <li class="active"><a href="index.html">Trang chủ</a> </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phân loại<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdowncostume">
+                            <li><a href="SportCategory.html">Sport</a></li>
+                            <li><a href="SportCategory.html">Bus</a></li>
+                            <li><a href="SportCategory.html">Crossover</a></li>
+                            <li><a href="SportCategory.html">Luxury</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hãng sản xuất<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdowncostume">
+                            <li><a href="FerrariCategory.html">Ferrari</a></li>
+                            <li><a href="FerrariCategory.html">Bugatti</a></li>
+                            <li><a href="FerrariCategory.html">Pagani</a></li>
+                            <li><a href="FerrariCategory.html">Lamborghini</a></li>
+                            <li><a href="FerrariCategory.html">Porsche</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Liên hệ</a>
+                    </li>
+                    <!-- Icon cart-->
+                    <li>
+                        <div class="header-wrapicon2">
+                            <img src="image/cart/shopping_cart.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <span class="header-icons-noti">3</span>
+                            <!-- Header cart noti -->
+                            <div class="header-cart header-dropdown">
+                                <ul class="header-cart-wrapitem">
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="image/cart/car1.jpg" alt="IMG">
+                                        </div>
+                                        <div class="header-cart-item-txt">
+                                            <a href="Detail1.html" class="header-cart-item-name">
 													Rolls Royce
 												</a>
-												<span class="header-cart-item-info">
+                                            <span class="header-cart-item-info">
 													1 x $700.000
 												</span>
-											</div>
-										</li>
-										<li class="header-cart-item">
-											<div class="header-cart-item-img">
-												<img src="image/cart/car4.jpg" alt="IMG">
-											</div>
-											<div class="header-cart-item-txt">
-												<a href="Detail1.html" class="header-cart-item-name">
+                                        </div>
+                                    </li>
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="image/cart/car4.jpg" alt="IMG">
+                                        </div>
+                                        <div class="header-cart-item-txt">
+                                            <a href="Detail1.html" class="header-cart-item-name">
 													Rover
 												</a>
-												<span class="header-cart-item-info">
+                                            <span class="header-cart-item-info">
 													1 x $700.000
 												</span>
-											</div>
-										</li>
-										<li class="header-cart-item">
-											<div class="header-cart-item-img">
-												<img src="image/cart/car6.jpg" alt="IMG">
-											</div>
-											<div class="header-cart-item-txt">
-												<a href="Detail2.html" class="header-cart-item-name">
+                                        </div>
+                                    </li>
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="image/cart/car6.jpg" alt="IMG">
+                                        </div>
+                                        <div class="header-cart-item-txt">
+                                            <a href="Detail2.html" class="header-cart-item-name">
 													Porche 911
 												</a>
-												<span class="header-cart-item-info">
+                                            <span class="header-cart-item-info">
 													1 x $700.000
 												</span>
-											</div>
-										</li>
-									</ul>
-									<div class="header-cart-total">
-										Tổng tiền: $2.100.000
-									</div>
-									<div class="header-cart-buttons">
-										<div class="header-cart-wrapbtn">
-											<!-- Button -->
-											<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="header-cart-total">
+                                    Tổng tiền: $2.100.000
+                                </div>
+                                <div class="header-cart-buttons">
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 												Xem giỏ hàng
 											</a>
-										</div>
-										<div class="header-cart-wrapbtn">
-											<!-- Button -->
-											<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    </div>
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 												Thanh toán
 											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-		<!--_______________________________________ Carousel__________________________________ -->
-		<div class="allcontain">
-			<div id="carousel-up" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner " role="listbox">
-					<div class="item active">
-						<img src="image/oldcar.jpg" alt="oldcar">
-					</div>
-					<div class="item">
-						<img src="image/porche.jpg" alt="porche">
-					</div>
-					<div class="item">
-						<img src="image/benz.jpg" alt="benz">
-					</div>
-				</div>
-				<nav class="navbar navbar-default midle-nav">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
-						<h1>SEARCH TEXT</h1>
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="collapse navbar-collapse" id="navbarmidle">
-						<div class="searchtxt">
-							<h1>SEARCH TEXT</h1>
-						</div>
-						<form class="navbar-form navbar-left searchformmargin" role="search">
-							<div class="form-group">
-								<input type="text" class="form-control searchform" placeholder="Enter Keyword">
-							</div>
-						</form>
-						<ul class="nav navbar-nav navbarborder">
-							<li class="li-category">
-								<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Phân loại<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-								<ul class="dropdown-menu" id="mydd">
-									<li><a href="#">Sport</a></li>
-									<li><a href="#">Bus</a></li>
-									<li><a href="#">Crossover</a></li>
-									<li><a href="#">Luxury</a></li>
-								</ul>
-							</li>
-							<li class="li-Giá"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Giá<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-							<ul class="dropdown-menu" id="mydd2">
-								<li><a href="#">Cao</a></li>
-								<li><a href="#">Trung bình</a></li>
-								<li><a href="3">Thấp</a></li>
-							</ul>
-						</li>
-						<li class="li-nxs"><a class="btn dropdown-toggle btn-costume"  id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Nhà SX<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-						<ul class="dropdown-menu" id="mydd3">
-							<li><a href="#">Ferrari</a></li>
-							<li><a href="#">Bugatti</a></li>
-							<li><a href="#">Pagani</a></li>
-						</ul>
-					</li>
-					<li class="li-search" > <button class="btn-primary"><span class="glyphicon glyphicon-search" style="font-size: 30px"></span></button></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-</div>
-<!-- ______________________________________________________Body______________________________-->
-<div style="text-align: center;">
-	<h1 >Sport Car</h1>
-<img src="image/line.svg"></div>
-<div class="allcontain">
-	<div style="padding-top: 50px">
-		<div class="panel panel-default" >
-			<div class="panel-heading" style="background-color: #900C3F;color: white; border-style: solid; border-top-right-radius: 6px;border-top-center-radius: 6px;font-size: 20px">Sản Phẩm</div>
-			<div class="panel-body">
-				<div class="row">
-					<div class="col-md-4" style="text-align: center;">
-						<div class="panel panel-default">
-							<img src="image/sport1.jpg" class="img-rounded" style="margin-top: 10px">
-							<h4 style="font-weight: bold;text-align: center;color:red ">Chevrolet Corvette Z06</h4>
-							<p style="text-align: center;">"Corvette Z06 được bán dưới dạng một chiếc coupe hoặc convertible, tính năng quan trọng nhất là chiếc V-8 6.2 lít tăng áp làm cho 650 mã lực và 650 lb-ft"</p>
-							<h3>Giá: 81.000&euro;</h3>
-							<a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--_______________________________________ Carousel__________________________________ -->
+    <div class="allcontain">
+        <div id="carousel-up" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner " role="listbox">
+                <div class="item active">
+                    <img src="image/oldcar.jpg" alt="oldcar">
+                </div>
+                <div class="item">
+                    <img src="image/porche.jpg" alt="porche">
+                </div>
+                <div class="item">
+                    <img src="image/benz.jpg" alt="benz">
+                </div>
+            </div>
+            <nav class="navbar navbar-default midle-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
+                        <h1>SEARCH TEXT</h1>
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarmidle">
+                    <div class="searchtxt">
+                        <h1>SEARCH TEXT</h1>
+                    </div>
+                    <form class="navbar-form navbar-left searchformmargin" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control searchform" placeholder="Enter Keyword">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbarborder">
+                        <li class="li-category">
+                            <a class="btn  dropdown-toggle btn-costume" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Phân loại<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                            <ul class="dropdown-menu" id="mydd">
+                                <li><a href="#">Sport</a></li>
+                                <li><a href="#">Bus</a></li>
+                                <li><a href="#">Crossover</a></li>
+                                <li><a href="#">Luxury</a></li>
+                            </ul>
+                        </li>
+                        <li class="li-Giá"><a class="btn  dropdown-toggle btn-costume" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Giá<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                            <ul class="dropdown-menu" id="mydd2">
+                                <li><a href="#">Cao</a></li>
+                                <li><a href="#">Trung bình</a></li>
+                                <li><a href="3">Thấp</a></li>
+                            </ul>
+                        </li>
+                        <li class="li-nxs"><a class="btn dropdown-toggle btn-costume" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Nhà SX<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                            <ul class="dropdown-menu" id="mydd3">
+                                <li><a href="#">Ferrari</a></li>
+                                <li><a href="#">Bugatti</a></li>
+                                <li><a href="#">Pagani</a></li>
+                            </ul>
+                        </li>
+                        <li class="li-search">
+                            <button class="btn-primary"><span class="glyphicon glyphicon-search" style="font-size: 30px"></span></button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- ______________________________________________________Body______________________________-->
+    <div style="text-align: center;">
+        <h1>Sport Car</h1>
+        <img src="image/line.svg"></div>
+    <div class="allcontain">
+        <div style="padding-top: 50px">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: #900C3F;color: white; border-style: solid; border-top-right-radius: 6px;border-top-center-radius: 6px;font-size: 20px">Sản Phẩm</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: center;">
+                            <div class="panel panel-default">
+                                <img src="image/sport1.jpg" class="img-rounded" style="margin-top: 10px">
+                                <h4 style="font-weight: bold;text-align: center;color:red ">Chevrolet Corvette Z06</h4>
+                                <p style="text-align: center;">"Corvette Z06 được bán dưới dạng một chiếc coupe hoặc convertible, tính năng quan trọng nhất là chiếc V-8 6.2 lít tăng áp làm cho 650 mã lực và 650 lb-ft"</p>
+                                <h3>Giá: 81.000&euro;</h3>
+                                <a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<a class="btn-addcart">
-								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4" style="text-align: center">
-						<div class="panel panel-default">
-							<img src="image/sport2.jpg" class="img-rounded" style="margin-top: 10px">
-							<h4 style="font-weight: bold;text-align: center;color:red ">Chevrolet Chevy Camaro ZL1</h4>
-							<p style="text-align: center;">"ZL1 là vua của những chiếc xe cơ bắp. Cả hai chiếc coupe và nhà chuyển đổi một hung dữ 650 mã lực tăng áp 6.2 lít V-8 tặng bởi Corvette Z06"</p>
-							<h3>Giá: 50.000&euro;</h3>
-							<a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
+                                <a class="btn-addcart">
+                                    <button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="text-align: center">
+                            <div class="panel panel-default">
+                                <img src="image/sport2.jpg" class="img-rounded" style="margin-top: 10px">
+                                <h4 style="font-weight: bold;text-align: center;color:red ">Chevrolet Chevy Camaro ZL1</h4>
+                                <p style="text-align: center;">"ZL1 là vua của những chiếc xe cơ bắp. Cả hai chiếc coupe và nhà chuyển đổi một hung dữ 650 mã lực tăng áp 6.2 lít V-8 tặng bởi Corvette Z06"</p>
+                                <h3>Giá: 50.000&euro;</h3>
+                                <a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<a class="btn-addcart">
-								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4" style="text-align: center">
-						<div class="panel panel-default">
-							<img src="image/sport3.jpg" class="img-rounded" style="margin-top: 10px">
-							<h4 style="font-weight: bold;text-align: center;color:red ">Lamborghini Huracan</h4>
-							<p style="text-align: center;">"Siêu xe Huracan là siêu xe cực kỳ mạnh mẽ. Một người bạn V-10 5.2 lít kỳ lạ với một ly hợp kép tự động bảy tốc độ . Mã lực dao động từ 572"</p>
-							<h3>Giá: 203.295&euro;</h3>
-							<a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
+                                <a class="btn-addcart">
+                                    <button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="text-align: center">
+                            <div class="panel panel-default">
+                                <img src="image/sport3.jpg" class="img-rounded" style="margin-top: 10px">
+                                <h4 style="font-weight: bold;text-align: center;color:red ">Lamborghini Huracan</h4>
+                                <p style="text-align: center;">"Siêu xe Huracan là siêu xe cực kỳ mạnh mẽ. Một người bạn V-10 5.2 lít kỳ lạ với một ly hợp kép tự động bảy tốc độ . Mã lực dao động từ 572"</p>
+                                <h3>Giá: 203.295&euro;</h3>
+                                <a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<a class="btn-addcart">
-								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4" style="text-align: center">
-						<div class="panel panel-default">
-							<img src="image/sport4.jpg" class="img-rounded" style="margin-top: 10px">
-							<h4 style="font-weight: bold;text-align: center;color:red ">McLaren 720S</h4>
-							<p style="text-align: center;">"McLaren với siêu xe nhẹ, khí động học, dữ dội và 720S là bằng chứng. Một đôi-turbo 2.0 lít V-8 twin-turbo ổ đĩa bánh sau thông qua một bảy tốc độ tự động"</p>
-							<h3>Giá: 288,845&euro;</h3>
-							<a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
+                                <a class="btn-addcart">
+                                    <button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="text-align: center">
+                            <div class="panel panel-default">
+                                <img src="image/sport4.jpg" class="img-rounded" style="margin-top: 10px">
+                                <h4 style="font-weight: bold;text-align: center;color:red ">McLaren 720S</h4>
+                                <p style="text-align: center;">"McLaren với siêu xe nhẹ, khí động học, dữ dội và 720S là bằng chứng. Một đôi-turbo 2.0 lít V-8 twin-turbo ổ đĩa bánh sau thông qua một bảy tốc độ tự động"</p>
+                                <h3>Giá: 288,845&euro;</h3>
+                                <a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<a class="btn-addcart">
-								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4" style="text-align: center">
-						<div class="panel panel-default">
-							<img src="image/sport5.jpg" class="img-rounded" style="margin-top: 10px">
-							<h4 style="font-weight: bold;text-align: center;color:red ">Porsche 718 Boxster</h4>
-							<p style="text-align: center;">"Siêu xe cơ động Boxster với một cặp turbo tăng cường mô-men xoắn (cơ sở là 2.0 lít 300 mã lực)và giai điệu của S 2,5 lít phẳng bốn đến 365 mã lực"</p>
-							<h3>Giá: $58,450&euro;</h3>
-							<a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
+                                <a class="btn-addcart">
+                                    <button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="text-align: center">
+                            <div class="panel panel-default">
+                                <img src="image/sport5.jpg" class="img-rounded" style="margin-top: 10px">
+                                <h4 style="font-weight: bold;text-align: center;color:red ">Porsche 718 Boxster</h4>
+                                <p style="text-align: center;">"Siêu xe cơ động Boxster với một cặp turbo tăng cường mô-men xoắn (cơ sở là 2.0 lít 300 mã lực)và giai điệu của S 2,5 lít phẳng bốn đến 365 mã lực"</p>
+                                <h3>Giá: $58,450&euro;</h3>
+                                <a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<a class="btn-addcart">
-								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4" style="text-align: center">
-						<div class="panel panel-default">
-							<img src="image/sport6.jpg" class="img-rounded" style="margin-top: 10px">
-							<h4 style="font-weight: bold;text-align: center;color:red ">Mercedes-AMG GT</h4>
-							<p style="text-align: center;">"Các gullwings đã biến mất, nhưng GT vẫn được thiết lập cùng với roadster đối tác của nó-có 4,0 lít twin-turbo V-8 kết nối với một bảy hộp số tự động"</p>
-							<h3>Giá: 113,395&euro;</h3>
-							<a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
+                                <a class="btn-addcart">
+                                    <button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="text-align: center">
+                            <div class="panel panel-default">
+                                <img src="image/sport6.jpg" class="img-rounded" style="margin-top: 10px">
+                                <h4 style="font-weight: bold;text-align: center;color:red ">Mercedes-AMG GT</h4>
+                                <p style="text-align: center;">"Các gullwings đã biến mất, nhưng GT vẫn được thiết lập cùng với roadster đối tác của nó-có 4,0 lít twin-turbo V-8 kết nối với một bảy hộp số tự động"</p>
+                                <h3>Giá: 113,395&euro;</h3>
+                                <a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<a class="btn-addcart">
-								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4" style="text-align: center">
-						<div class="panel panel-default">
-							<img src="image/sport7.jpg" class="img-rounded" style="margin-top: 10px">
-							<h4 style="font-weight: bold;text-align: center;color:red ">Ferrari 488GTB</h4>
-							<p style="text-align: center;">"Với một động cơ V-8 twin-turbo 2.2-lít gắn trên giữa, 488GTB tăng tốc tất cả các cách để 8000 rpm, nơi nó làm cho 661h"</p>
-							<h3>Giá: 256,550&euro;</h3>
-							<a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
+                                <a class="btn-addcart">
+                                    <button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="text-align: center">
+                            <div class="panel panel-default">
+                                <img src="image/sport7.jpg" class="img-rounded" style="margin-top: 10px">
+                                <h4 style="font-weight: bold;text-align: center;color:red ">Ferrari 488GTB</h4>
+                                <p style="text-align: center;">"Với một động cơ V-8 twin-turbo 2.2-lít gắn trên giữa, 488GTB tăng tốc tất cả các cách để 8000 rpm, nơi nó làm cho 661h"</p>
+                                <h3>Giá: 256,550&euro;</h3>
+                                <a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<a class="btn-addcart">
-								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4" style="text-align: center">
-						<div class="panel panel-default">
-							<img src="image/sport8.jpg" class="img-rounded" style="margin-top: 10px">
-							<h4 style="font-weight: bold;text-align: center;color:red ">Porsche 718 Cayman</h4>
-							<p style="text-align: center;">"Cặp đôi turbo của Cayman (cơ sở có công suất 300 mã lực 2.0 lít; S có công suất 350 mã lực 2,5 lít) nhưng chúng bị hỏng và nhanh"</p>
-							<h3>Giá: 56,350&euro;</h3>
-							<a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
+                                <a class="btn-addcart">
+                                    <button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="text-align: center">
+                            <div class="panel panel-default">
+                                <img src="image/sport8.jpg" class="img-rounded" style="margin-top: 10px">
+                                <h4 style="font-weight: bold;text-align: center;color:red ">Porsche 718 Cayman</h4>
+                                <p style="text-align: center;">"Cặp đôi turbo của Cayman (cơ sở có công suất 300 mã lực 2.0 lít; S có công suất 350 mã lực 2,5 lít) nhưng chúng bị hỏng và nhanh"</p>
+                                <h3>Giá: 56,350&euro;</h3>
+                                <a href="Detail2.html" type="button" class="btn btn-primary" style="margin-bottom: 10px">Xem chi tiết
 								<span class="glyphicon glyphicon-menu-right"></span>
 							</a>
-							<a class="btn-addcart">
-								<button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- ______________________________________________________Bottom Menu ______________________________-->
-<div class="allcontain">
-	<div class="footer">
-		<div class="copyright">
-			&copy; Copy right 2018 | <a href="#">Privacy </a>| <a href="#">Policy</a>
-		</div>
-		<div class="atisda">
-			Designed by <a href="https://www.facebook.com/milu.le">Web Quả Tạ</a>
-		</div>
-	</div>
-</div>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
-<script type="text/javascript" src="source/js/isotope.js"></script>
-<script type="text/javascript" src="source/js/myscript.js"></script>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
-<script type="text/javascript" src="source/cart/animsition.min.js"></script>
-<script src="source/cart/main.js"></script>
+                                <a class="btn-addcart">
+                                    <button type="button" class="btn btn-danger glyphicon glyphicon-shopping-cart" style="margin-bottom: 10px"></button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ______________________________________________________Bottom Menu ______________________________-->
+    <div class="allcontain">
+        <div class="footer">
+            <div class="copyright">
+                &copy; Copy right 2018 | <a href="#">Privacy </a>| <a href="#">Policy</a>
+            </div>
+            <div class="atisda">
+                Designed by <a href="https://www.facebook.com/milu.le">Web Quả Tạ</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+    <script type="text/javascript" src="source/js/isotope.js"></script>
+    <script type="text/javascript" src="source/js/myscript.js"></script>
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="source/cart/animsition.min.js"></script>
+    <script src="source/cart/main.js"></script>
+    <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+    <script type="text/javascript">
+    /*document.getElementById('addCart').onclick = function(){
+            swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
+        };*/
 
-<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
-<script type="text/javascript">
-        /*document.getElementById('addCart').onclick = function(){
-        swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
-    };*/
+    $('.btn-addcart').each(function() {
 
-    $('.btn-addcart').each(function(){
-            
-            $(this).on('click', function(){
-                swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
-            });
+        $(this).on('click', function() {
+            swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
         });
-</script>
-
+    });
+    </script>
 </body>
+
 </html>
