@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=vietnamese">
         <link rel="stylesheet" type="text/css" href="style/mystyle.css">
-
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <link rel="stylesheet" type="text/css" href="source/cart/util.css">
         <link rel="stylesheet" type="text/css" href="source/cart/main.css">
     </head>
@@ -34,10 +34,12 @@
                                 <input id="username" type="text" placeholder="Enter Username" name="uname" required>
                                 <label for="psw"><b>Password</b></label>
                                 <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+                                <div class="g-recaptcha" data-sitekey="6LedT9wSAAAAAJnR8DTfGReNvTgliYWy3MZDb7f3"></div>
                                 <button type="submit">Login</button>
                                 <label>
                                     <input type="checkbox" checked="checked" name="remember"> Remember me
                                 </label>
+                                
                             </div>
                             <div class="container" style="background-color:#f1f1f1">
                                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -63,6 +65,7 @@
                             <label>
                                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
                             </label>
+                            <div class="g-recaptcha" data-sitekey="6LedT9wSAAAAAJnR8DTfGReNvTgliYWy3MZDb7f3"></div>
                             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
                             <div class="clearfix">
                                 <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
