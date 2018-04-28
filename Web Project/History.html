@@ -21,7 +21,7 @@
                 <ul class="givusacall">
                     <li>Give us a call : +66666666 </li>
                 </ul>
-            <ul class="logreg" style="display: none">
+                <ul class="logreg" style="display: none">
                     <li><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login </a>
                     <div id="id01" class="modal">
                         <form id="form-login" class="modal-content animate" action="">
@@ -75,7 +75,7 @@
                     </form>
                 </div>
             </li>
-        </ul>    
+        </ul>
     </div>
     <!-- Navbar Up -->
     <nav class="topnavbar navbar-default topnav">
@@ -267,58 +267,63 @@
 </div>
 <!-- ____________________Featured Section ______________________________-->
 <div class="allcontain" style="float: center;margin-top: 50px">
-    <div class="panel panel-primary">
-        <div class="panel-heading"><h3>Cập nhật thông tin cá nhân</h3></div>
-        <div class="panel-body">
-            <form class="form-horizontal">
-    <div class="form-group col-md-6">
-      <label class="control-label col-md-2" for="name">Họ tên:</label>
-      <div class="col-md-10">
-        <input type="name" class="form-control" id="name" placeholder="Lê Duy">
-      </div>
-    </div>
-    <div class="form-group col-md-6">
-      <label class="control-label col-md-2" for="gd">Giới tính:</label>
-      <div class="col-md-10">          
-        <select class="form-control">
-            <option>Nam</option>
-            <option>Nữ</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group col-md-6">
-      <label class="control-label col-md-2" for="date">Ngày sinh:</label>
-      <div class="col-md-10">          
-        <input type="date" class="form-control" id="date" placeholder="dd/mm/yy">
-      </div>
-    </div>
-    <div class="form-group col-md-6">
-      <label class="control-label col-md-2" for="addr">Địa chỉ:</label>
-      <div class="col-md-10">          
-        <input type="addr" class="form-control" id="addr" placeholder="E69 Lê Duẩn">
-      </div>
-    </div>
-    <div class="form-group col-md-6">
-      <label class="control-label col-md-2" for="phone">Số điện thoại:</label>
-      <div class="col-md-10">          
-        <input type="phone" class="form-control" id="phone" placeholder="01694790196">
-      </div>
-    </div>
-    <div class="form-group col-md-6">
-      <label class="control-label col-md-2" for="pwd">Công việc:</label>
-      <div class="col-md-10 ">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-md-offset-1 col-md-10">
-        <button type="submit" class="btn btn-warning btn-lg">Cập nhật</button>
-      </div>
-    </div>
-
-  </form>
+         <div style="text-align: center;">
+        <h1>Lịch sử mua hàng</h1>
+        <img src="image/line.svg"></div>
+        <div class="row">
+        <div class="col-md-3 col-md-offset-1 ">
+           <h4> Họ và tên: <span style="color:  #900C3F;font-size: 23px">Lê Võ Hoàng Duy</span></h4>
         </div>
-    </div>         
+        <div class="col-md-7 col-md-offset-1">
+           <h4> Địa chỉ: <span style="color:  #900C3F;font-size: 23px">69 Lê Duẩn</span></h4>
+        </div>
+        <div class="col-md-3 col-md-offset-1 ">
+           <h4> Mã khách hàng: <span style="color:  #900C3F;font-size: 23px">KH104</span></h4>
+        </div>
+        <div class="col-md-7 col-md-offset-1">
+           <h4> Số điện thoại: <span style="color:  #900C3F;font-size: 23px">01258906910</span></h4>
+        </div>      
+    </div>
+    <div class="table-responsive"></div>
+    <table class="table table-bordered " style="text-align: center;font-weight: bold">
+    <thead>
+      <tr>
+        <th class="info tbcolor" >STT</th>
+        <th class="info tbcolor">Sản phẩm</th>
+        <th class="info tbcolor">Số lượng</th>
+        <th class="info tbcolor">Tổng tiền</th>
+        <th class="info tbcolor">Ngày mua</th>
+        <th class="info tbcolor">Chi tiết</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Chevrolet Corvette Z06</td>
+        <td>2</td>
+        <td>162.000&euro;</td>
+        <td>20/05/2018</td>
+        <td><a href="Detail1.html">Xem chi tiết</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Porsche 718 Boxster</td>
+        <td>1</td>
+        <td>58.450&euro;</td>
+        <td>16/05/2018</td>
+        <td><a href="Detail2.html">Xem chi tiết</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Lamborghini Huracan</td>
+        <td>3</td>
+        <td>609.885&euro;</td>
+        <td>28/04/2017</td>
+        <td><a href="Detail1.html">Xem chi tiết</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </div>  
 
 <!-- ______________________________________________________Bottom Menu______________________________-->
@@ -340,5 +345,10 @@
 
 <script type="text/javascript" src="source/cart/animsition.min.js"></script>
 <script src="source/cart/main.js"></script>
+<script>
+function myFunction() {
+    document.getElementById("myDIV").innerHTML.style.display = "none";
+}
+</script>
 </body>
 </html>
