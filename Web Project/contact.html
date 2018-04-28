@@ -1,40 +1,42 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Car Website</title>
-        <meta name="description" content="Web Quả Tạ">
-        <meta name="author" content="Web Quả Tạ">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=vietnamese">
-        <link rel="stylesheet" type="text/css" href="style/mystyle.css">
-        <link rel="stylesheet" type="text/css" href="style/contactstyle.css">
-        <link rel="stylesheet" type="text/css" href="source/cart/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="source/cart/util.css">
-        <link rel="stylesheet" type="text/css" href="source/cart/main.css">
-    </head>
-    <body>
-        <!-- Header -->
-        <div class="allcontain">
-            <div class="header">
-                <ul class="givusacall">
-                    <li>Give us a call : +66666666 </li>
-                </ul>
-                <ul class="logreg">
-                    <li><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login </a>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Website</title>
+    <meta name="description" content="Web Quả Tạ">
+    <meta name="author" content="Web Quả Tạ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="source/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;subset=vietnamese">
+    <link rel="stylesheet" type="text/css" href="style/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="style/contactstyle.css">
+    <link rel="stylesheet" type="text/css" href="source/cart/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="source/cart/util.css">
+    <link rel="stylesheet" type="text/css" href="source/cart/main.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="allcontain">
+        <div class="header">
+            <ul class="givusacall">
+                <li>Give us a call : +66666666 </li>
+            </ul>
+            <ul class="logreg">
+                <li><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login </a>
                     <div id="id01" class="modal">
-                        <form class="modal-content animate" action="/action_page.php">
+                        <form id="form-login" class="modal-content animate" action="">
                             <div class="imgcontainer">
                                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                                 <img src="image/avatar.png" alt="Avatar" class="avatar">
                             </div>
                             <div class="container">
                                 <label for="uname"><b>Username</b></label>
-                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <input id ="usename" type="text" placeholder="Enter Username" name="uname" required>
                                 <label for="psw"><b>Password</b></label>
-                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <input id ="password" type="password" placeholder="Enter Password" name="psw" required>
                                 <button type="submit">Login</button>
                                 <label>
                                     <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -48,274 +50,276 @@
                     </div>
                 </li>
                 <li><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span class="register">Register</span></a>
-                <div id="id02" class="modal2">
-                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <form class="modal-content" action="/action_page.php">
-                        <div class="container">
-                            <h1>Sign Up</h1>
-                            <p>Please fill in this form to create an account.</p>
-                            <hr>
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" required>
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-                            <label for="psw-repeat"><b>Repeat Password</b></label>
-                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                            </label>
-                            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-                            <div class="clearfix">
-                                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                                <button type="submit" class="signupbtn">Sign Up</button>
+                    <div id="id02" class="modal2">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <form class="modal-content" action="">
+                            <div class="container">
+                                <h1>Sign Up</h1>
+                                <p>Please fill in this form to create an account.</p>
+                                <hr>
+                                <label for="email"><b>Email</b></label>
+                                <input type="text" placeholder="Enter Email" name="email" required>
+                                <label for="psw"><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <label for="psw-repeat"><b>Repeat Password</b></label>
+                                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                                </label>
+                                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                                <div class="clearfix">
+                                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                                    <button type="submit" class="signupbtn">Sign Up</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </li>
-        </ul>
-    </div>
-            <!-- Navbar Up -->
-            <nav class="topnavbar navbar-default topnav">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Navbar Up -->
+        <nav class="topnavbar navbar-default topnav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
                         <span class="sr-only"> Toggle navigaion</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
-                    </div>
+                    </button>
+                    <a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
                 </div>
-                <div class="collapse navbar-collapse" id="myHeader">
-                    <ul class="nav navbar-nav" id="navbarontop">
-                        <li class="active"><a href="index.html">Trang chủ</a> </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phân loại<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdowncostume">
-                                <li><a href="SportCategory.html">Sport</a></li>
-                                <li><a href="SportCategory.html">Bus</a></li>
-                                <li><a href="SportCategory.html">Crossover</a></li>
-                                <li><a href="SportCategory.html">Luxury</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hãng sản xuất<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdowncostume">
-                                <li><a href="FerrariCategory.html">Ferrari</a></li>
-                                <li><a href="FerrariCategory.html">Bugatti</a></li>
-                                <li><a href="FerrariCategory.html">Pagani</a></li>
-                                <li><a href="FerrariCategory.html">Lamborghini</a></li>
-                                <li><a href="FerrariCategory.html">Porsche</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="contact.html">Liên hệ</a>
-                        </li>
-                        <!-- Icon cart-->
-                        <li>
-                            <div class="header-wrapicon2">
-                                <img src="image/cart/shopping_cart.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                                <span class="header-icons-noti">3</span>
-                                <!-- Header cart noti -->
-                                <div class="header-cart header-dropdown">
-                                    <ul class="header-cart-wrapitem">
-                                        <li class="header-cart-item">
-                                            <div class="header-cart-item-img">
-                                                <img src="image/cart/car1.jpg" alt="IMG">
-                                            </div>
-                                            <div class="header-cart-item-txt">
-                                                <a href="Detail1.html" class="header-cart-item-name">
+            </div>
+            <div class="collapse navbar-collapse" id="myHeader">
+                <ul class="nav navbar-nav" id="navbarontop">
+                    <li class="active"><a href="index.html">Trang chủ</a> </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phân loại<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdowncostume">
+                            <li><a href="SportCategory.html">Sport</a></li>
+                            <li><a href="SportCategory.html">Bus</a></li>
+                            <li><a href="SportCategory.html">Crossover</a></li>
+                            <li><a href="SportCategory.html">Luxury</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hãng sản xuất<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdowncostume">
+                            <li><a href="FerrariCategory.html">Ferrari</a></li>
+                            <li><a href="FerrariCategory.html">Bugatti</a></li>
+                            <li><a href="FerrariCategory.html">Pagani</a></li>
+                            <li><a href="FerrariCategory.html">Lamborghini</a></li>
+                            <li><a href="FerrariCategory.html">Porsche</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Liên hệ</a>
+                    </li>
+                    <!-- Icon cart-->
+                    <li>
+                        <div class="header-wrapicon2">
+                            <img src="image/cart/shopping_cart.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <span class="header-icons-noti">3</span>
+                            <!-- Header cart noti -->
+                            <div class="header-cart header-dropdown">
+                                <ul class="header-cart-wrapitem">
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="image/cart/car1.jpg" alt="IMG">
+                                        </div>
+                                        <div class="header-cart-item-txt">
+                                            <a href="Detail1.html" class="header-cart-item-name">
                                                     Rolls Royce
                                                 </a>
-                                                <span class="header-cart-item-info">
+                                            <span class="header-cart-item-info">
                                                     1 x $700.000
                                                 </span>
-                                            </div>
-                                        </li>
-                                        <li class="header-cart-item">
-                                            <div class="header-cart-item-img">
-                                                <img src="image/cart/car4.jpg" alt="IMG">
-                                            </div>
-                                            <div class="header-cart-item-txt">
-                                                <a href="Detail1.html" class="header-cart-item-name">
+                                        </div>
+                                    </li>
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="image/cart/car4.jpg" alt="IMG">
+                                        </div>
+                                        <div class="header-cart-item-txt">
+                                            <a href="Detail1.html" class="header-cart-item-name">
                                                     Rover
                                                 </a>
-                                                <span class="header-cart-item-info">
+                                            <span class="header-cart-item-info">
                                                     1 x $700.000
                                                 </span>
-                                            </div>
-                                        </li>
-                                        <li class="header-cart-item">
-                                            <div class="header-cart-item-img">
-                                                <img src="image/cart/car6.jpg" alt="IMG">
-                                            </div>
-                                            <div class="header-cart-item-txt">
-                                                <a href="Detail2.html" class="header-cart-item-name">
+                                        </div>
+                                    </li>
+                                    <li class="header-cart-item">
+                                        <div class="header-cart-item-img">
+                                            <img src="image/cart/car6.jpg" alt="IMG">
+                                        </div>
+                                        <div class="header-cart-item-txt">
+                                            <a href="Detail2.html" class="header-cart-item-name">
                                                     Porche 911
                                                 </a>
-                                                <span class="header-cart-item-info">
+                                            <span class="header-cart-item-info">
                                                     1 x $700.000
                                                 </span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="header-cart-total">
-                                        Tổng tiền: $2.100.000
-                                    </div>
-                                    <div class="header-cart-buttons">
-                                        <div class="header-cart-wrapbtn">
-                                            <!-- Button -->
-                                            <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="header-cart-total">
+                                    Tổng tiền: $2.100.000
+                                </div>
+                                <div class="header-cart-buttons">
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                                 Xem giỏ hàng
                                             </a>
-                                        </div>
-                                        <div class="header-cart-wrapbtn">
-                                            <!-- Button -->
-                                            <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    </div>
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                                 Thanh toán
                                             </a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--_______________________________________ Carousel__________________________________ -->
+    <div class="allcontain">
+        <div id="carousel-up" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner " role="listbox">
+                <div class="item active">
+                    <img src="image/oldcar.jpg" alt="oldcar">
                 </div>
-            </nav>
-        </div>
-        <!--_______________________________________ Carousel__________________________________ -->
-        <div class="allcontain">
-            <div id="carousel-up" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner " role="listbox">
-                    <div class="item active">
-                        <img src="image/oldcar.jpg" alt="oldcar">
-                    </div>
-                    <div class="item">
-                        <img src="image/porche.jpg" alt="porche">
-                    </div>
-                    <div class="item">
-                        <img src="image/benz.jpg" alt="benz">
-                    </div>
+                <div class="item">
+                    <img src="image/porche.jpg" alt="porche">
                 </div>
-                <nav class="navbar navbar-default midle-nav">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
+                <div class="item">
+                    <img src="image/benz.jpg" alt="benz">
+                </div>
+            </div>
+            <nav class="navbar navbar-default midle-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
                         <h1>SEARCH TEXT</h1>
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        </button>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarmidle">
+                    <div class="searchtxt">
+                        <h1>SEARCH TEXT</h1>
                     </div>
-                    <div class="collapse navbar-collapse" id="navbarmidle">
-                        <div class="searchtxt">
-                            <h1>SEARCH TEXT</h1>
+                    <form class="navbar-form navbar-left searchformmargin" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control searchform" placeholder="Enter Keyword">
                         </div>
-                        <form class="navbar-form navbar-left searchformmargin" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control searchform" placeholder="Enter Keyword">
-                            </div>
-                        </form>
-                        <ul class="nav navbar-nav navbarborder">
-                            <li class="li-category">
-                                <a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Phân loại<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-                                <ul class="dropdown-menu" id="mydd">
-                                    <li><a href="#">Sport</a></li>
-                                    <li><a href="#">Bus</a></li>
-                                    <li><a href="#">Crossover</a></li>
-                                    <li><a href="#">Luxury</a></li>
-                                </ul>
-                            </li>
-                            <li class="li-Giá"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Giá<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                    </form>
+                    <ul class="nav navbar-nav navbarborder">
+                        <li class="li-category">
+                            <a class="btn  dropdown-toggle btn-costume" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Phân loại<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                            <ul class="dropdown-menu" id="mydd">
+                                <li><a href="#">Sport</a></li>
+                                <li><a href="#">Bus</a></li>
+                                <li><a href="#">Crossover</a></li>
+                                <li><a href="#">Luxury</a></li>
+                            </ul>
+                        </li>
+                        <li class="li-Giá"><a class="btn  dropdown-toggle btn-costume" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Giá<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
                             <ul class="dropdown-menu" id="mydd2">
                                 <li><a href="#">Cao</a></li>
                                 <li><a href="#">Trung bình</a></li>
                                 <li><a href="3">Thấp</a></li>
                             </ul>
                         </li>
-                        <li class="li-nxs"><a class="btn dropdown-toggle btn-costume"  id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Nhà SX<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-                        <ul class="dropdown-menu" id="mydd3">
-                            <li><a href="#">Ferrari</a></li>
-                            <li><a href="#">Bugatti</a></li>
-                            <li><a href="#">Pagani</a></li>
-                        </ul>
-                    </li>
-                    <li class="li-search" > <button class="btn-primary"><span class="glyphicon glyphicon-search" style="font-size: 30px"></span></button></li>
-                </ul>
-            </div>
-        </nav>
+                        <li class="li-nxs"><a class="btn dropdown-toggle btn-costume" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Nhà SX<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                            <ul class="dropdown-menu" id="mydd3">
+                                <li><a href="#">Ferrari</a></li>
+                                <li><a href="#">Bugatti</a></li>
+                                <li><a href="#">Pagani</a></li>
+                            </ul>
+                        </li>
+                        <li class="li-search">
+                            <button class="btn-primary"><span class="glyphicon glyphicon-search" style="font-size: 30px"></span></button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </div>
-</div>
-<div class="allcontain">
-    <div class="contact">
-        <div class="newslettercontent">
-            <div class="leftside">
-                <img id="image_border" src="image/border.png" alt="border">
-                <div class="contact-form">
-                    <h1>Contact Us</h1>
-                    <div class="form-group group-coustume">
-                        <input type="text" class="form-control name-form" placeholder="Name">
-                        <input type="text" class="form-control email-form" placeholder="E-mail">
-                        <input type="text" class="form-control subject-form" placeholder="Subject">
-                        <textarea rows="4" cols="50" class="message-form"></textarea>
-                        <button type="submit" class="btn btn-default btn-submit">Submit</button>
+    <div class="allcontain">
+        <div class="contact">
+            <div class="newslettercontent">
+                <div class="leftside">
+                    <img id="image_border" src="image/border.png" alt="border">
+                    <div class="contact-form">
+                        <h1>Contact Us</h1>
+                        <div class="form-group group-coustume">
+                            <input type="text" class="form-control name-form" placeholder="Name">
+                            <input type="text" class="form-control email-form" placeholder="E-mail">
+                            <input type="text" class="form-control subject-form" placeholder="Subject">
+                            <textarea rows="4" cols="50" class="message-form"></textarea>
+                            <button type="submit" class="btn btn-default btn-submit">Submit</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="google-maps">
-                <div id="googleMap"></div>
+                <div class="google-maps">
+                    <div id="googleMap"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="footer">
-    <div class="copyright">
-        &copy; Copy right 2018 | <a href="#">Privacy </a>| <a href="#">Policy</a>
+    <div class="footer">
+        <div class="copyright">
+            &copy; Copy right 2018 | <a href="#">Privacy </a>| <a href="#">Policy</a>
+        </div>
+        <div class="atisda">
+            Designed by <a href="https://www.facebook.com/milu.le">Web Quả Tạ</a>
+        </div>
     </div>
-    <div class="atisda">
-        Designed by <a href="https://www.facebook.com/milu.le">Web Quả Tạ</a>
     </div>
-</div>
-</div>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-var myCenter = new google.maps.LatLng(10.762417, 106.681201);
-function initialize() {
-var mapProp = {
-center: myCenter,
-zoom: 16,
-mapTypeId: google.maps.MapTypeId.ROADMAP
-};
-var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-var marker = new google.maps.Marker({
-position: myCenter,
-});
-marker.setMap(map);
-}
-</script>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
-<script type="text/javascript" src="source/js/myscript.js"></script>
-<script type="text/javascript" src="source/js/isotope.js"></script>
-<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+    var myCenter = new google.maps.LatLng(10.762417, 106.681201);
 
-<script>
-$(window).resize(function() {
-var new_height = $("#image_border").height();
-console.log(new_height);
-$("#googleMap").height(new_height);
-});
-$(window).load(function() {
-var new_height = $("#image_border").height();
-console.log(new_height);
-$("#googleMap").height(new_height);
-google.maps.event.addDomListener(window, 'load', initialize());
-});
-</script>
-
-<script type="text/javascript" src="source/js/myscript.js"></script>
-<script type="text/javascript" src="source/cart/animsition.min.js"></script>
-<script src="source/cart/main.js"></script>
+    function initialize() {
+        var mapProp = {
+            center: myCenter,
+            zoom: 16,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({
+            position: myCenter,
+        });
+        marker.setMap(map);
+    }
+    </script>
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+    <script type="text/javascript" src="source/js/myscript.js"></script>
+    <script type="text/javascript" src="source/js/isotope.js"></script>
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <script>
+    $(window).resize(function() {
+        var new_height = $("#image_border").height();
+        console.log(new_height);
+        $("#googleMap").height(new_height);
+    });
+    $(window).load(function() {
+        var new_height = $("#image_border").height();
+        console.log(new_height);
+        $("#googleMap").height(new_height);
+        google.maps.event.addDomListener(window, 'load', initialize());
+    });
+    </script>
+    <script type="text/javascript" src="source/js/myscript.js"></script>
+    <script type="text/javascript" src="source/cart/animsition.min.js"></script>
+    <script src="source/cart/main.js"></script>
 </body>
+
 </html>
