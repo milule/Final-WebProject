@@ -1,0 +1,72 @@
+{{#section 'title'}}
+	Product List
+{{/section}}
+<div style="padding:40px;text-align:center;" class="allcontain brandstyle">asd
+
+</div>
+<div class="allcontain">
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-3">
+				<div class="panel panel-danger">
+					<div class="panel-heading ">
+						<h3 class="panel-title">Categories</h3>
+					</div>
+					<div class="list-group">
+						{{#each categories}}
+						<a href="/byCat/{{CatID}}" class="list-group-item">{{CatName}}</a>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+{{#if noProducts}}
+
+	<div class="col-sm-9 col-md-9 col-lg-9">
+		Không có sản phẩm thoả yêu cầu.
+	</div>
+{{else}}
+<div class="container-fluid">
+	{{#each products}}
+	<div class="col-sm-3 col-md-3">
+		<div class="thumbnail">
+			<img src="/imgs/sp/{{ProID}}/main_thumbs.jpg" alt="{{ProName}}" title="{{ProName}}">
+			<div class="caption">
+				<h4>{{ProName}}</h4>
+				<h4>{{Price}}</h4>
+				<p style="min-height: 60px">{{TinyDes}}</p>
+				<p>
+					<a href="#" class="btn btn-primary" role="button">
+						<span class="glyphicon glyphicon-eye-open"></span>
+						Details
+					</a>
+					<a href="#" class="btn btn-danger" role="button">
+						<span class="glyphicon glyphicon-shopping-cart"></span>
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+	
+</div>
+</div>
+</div>
+<div class="row">
+	<div class="col-md-3 col-md-offset-6 ">	
+<ul class="pagination" >
+	<li class="disabled">
+		<a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a>
+	</li>
+	{{#each page_numbers}}
+		{{#if isCurPage}}
+			<li class="active"><a href="javascript:;">{{value}}</a></li>
+		{{else}}
+			<li><a href="?page={{value}}">{{value}}</a></li>
+		{{/if}}
+	{{/each}}
+	<li>
+		<a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+	</ul>
+</nav>
+{{/if}}
+</div>
+</div>
