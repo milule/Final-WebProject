@@ -1,0 +1,114 @@
+{{#section 'title'}} Product Detail {{/section}} 
+<style>
+
+    .mySlides {
+        display: none
+    }
+
+    .demo {
+        cursor: pointer
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="/style/w3.css"> 
+
+{{#with product}}
+<div style="text-align: center;">
+    <h1 class="garm">{{ProName}}</h1>
+    <img src="/image/line.svg">
+</div>
+<div class="contain-fluid">
+    <div style="padding-top: 50px;padding-bottom: 50px">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="mySlides img-rounded" src="/image/Fe-detail3.jpg" style="width:100%;box-shadow: 2px 2px 30px">
+                <img class="mySlides img-rounded" src="/image/Fe-detail4.jpg" style="width:100%;box-shadow: 2px 2px 30px">
+                <img class="mySlides img-rounded" src="/image/Fe-detail2.jpg" style="width:100%;box-shadow: 2px 2px 30px">
+                <img class="mySlides img-rounded" src="/image/Fe-detail1.jpg" style="width:100%;box-shadow: 2px 2px 30px">
+                <div style="margin: 10px 0px 0px 10px">
+                    <div class="col-md-3">
+                        <img class="demo w3-opacity w3-hover-opacity-off" src="/image/Fe-detail3.jpg" style="width:95%" onclick="currentDiv(1)">
+                    </div>
+                    <div class="col-md-3" ">
+                        <img class="demo w3-opacity w3-hover-opacity-off " src="/image/Fe-detail4.jpg " style="width:95%
+                        " onclick="currentDiv(2) ">
+                    </div>
+                    <div class="col-md-3 "">
+                        <img class="demo w3-opacity w3-hover-opacity-off" src="/image/Fe-detail2.jpg" style="width:95%" onclick="currentDiv(3)">
+                    </div>
+                    <div class="col-md-3" ">
+                        <img class="demo w3-opacity w3-hover-opacity-off " src="/image/Fe-detail1.jpg " style="width:95%
+                        " onclick="currentDiv(4) ">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 " style="padding-left: 50px;position: center; ">
+                <div class="col-md-7 ">
+                    <h1 style="color: #990000 ">{{number_format Price}} &dollar;</h1>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Số lượt xem: {{Seen}} </h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Số lượng bán: {{Quantity}}</h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  
+                        Mô tả: {{FullDes}}
+                    </h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Xuất sứ: Modena, Italy</h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Loại: {{Catname}}</h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Nhà sản xuất: {{Origin}}</h4>
+                    <a class="btn-addcart ">
+                        <button class="btn btn-danger btn-lg ">Đặt mua hàng  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                    </a>
+                    <a class="btn-addcart ">
+                        <button class="btn btn-primary btn-lg ">Đặt mua góp  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                    </a>
+                </div>
+                <div class="col-md-5 "> 
+                    <div class="panel panel-default ">
+                        <div class="panel-body ">
+                            <h4 style="color: green ">Quà Khuyến Mãi</h4>
+                            <h2 style="color: #990000 ">KM SIÊU KHỦNG: TUẦN GIÁ HUỶ DIỆT</h2>
+                            <p style="text-align: center;color: #ff9933 ">
+                                <span class="glyphicon glyphicon-star-empty "></span>
+                                <span class="glyphicon glyphicon-star-empty "></span>
+                                <span class="glyphicon glyphicon-star-empty "></span>
+                            </p>
+                            <h3 style="color: blue ">Tặng ngay Iphone X khi mua siêu xe {{ProName}}</h3>
+                            <p style="text-align: center;color: #ff9933 ">
+                                <span class="glyphicon glyphicon-star-empty "></span>
+                                <span class="glyphicon glyphicon-star-empty "></span>
+                                <span class="glyphicon glyphicon-star-empty "></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/with}}
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides ");
+            var dots = document.getElementsByClassName("demo ");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none ";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-opacity-off ", " ");
+            }
+            x[slideIndex - 1].style.display = "block ";
+            dots[slideIndex - 1].className += " w3-opacity-off ";
+        }
+    </script>
+

@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var exphbs = require('express-handlebars');
 var exphbs_section = require('express-handlebars-sections');
-
+var wnumb = require('wnumb');
 var indexRouter = require('./controller/ProductController');
 
 var app = express();
@@ -14,12 +14,19 @@ app.engine('hbs', exphbs({
   defaultLayout: 'layout',
   layoutsDir: 'views',
   helpers: {
-      section: exphbs_section()
+      section: exphbs_section(),
+      number_format: n => {
+        var nf = wnumb({
+            thousand: ','
+        });
+        return nf.to(n);
+    }
   }
 }));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

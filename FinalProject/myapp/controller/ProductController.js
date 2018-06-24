@@ -1,7 +1,7 @@
 var express = require('express');
 var productRepo = require('../repo/ProductRepo');
 var config = require('../config/config');
-
+var decode = require('unescape');
 var router = express.Router();
 
 // router.get('/',(req,res) => {
@@ -21,14 +21,11 @@ var router = express.Router();
 
 router.get('/byCat/:catID', (req, res) => {
     var catID = req.params.catID;
-
     var page = req.query.page;
     if (!page) {
         page = 1;
     }
-
     var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
-
     var p1 = productRepo.loadAllByCat(catID, offset);
     var p2 = productRepo.countByCat(catID);
     var p3 = productRepo.loadAllC();
@@ -41,25 +38,54 @@ router.get('/byCat/:catID', (req, res) => {
         if (total % config.PRODUCTS_PER_PAGE > 0) {
             Pages++;
         }
-
+        var temp = +catID - +1;
+        var catName=rows[temp].CatName;
         var numbers = [];
         for (i = 1; i <= Pages; i++) {
             numbers.push({
                 value: i,
-                isCurPage: i === +page
+                isCurPage: i === +page,
             });
         }
-
         var vm = {
             products: ProdRows,
             noProducts: ProdRows.length === 0,
             page_numbers: numbers,
-            categories: rows 
+            categories: rows ,
+            categoryName:catName,
+            num_page: parseInt(Pages),
+            lastPage: +page===parseInt(Pages),
+            firstPage: +page===1
         };
         res.render('product/byCat', vm);
     });
 });
 
+router.get('/detail/:proName', (req, res) => {
+        var catID=req.params.catID;
+        var proName= req.params.proName;
+        console.log(proName);
+       // var p1=productRepo.loadOneProduct(proID);
+        // var p2=productRepo.loadCatName(catID);
+       // console.log(p1);
+        // Promise.all([p1, p2]).then(([ProdDeta, catname]) => {
+        //      console.log(ProdDeta);
+        //      console.log(catname);
+        //     var vm={
+        //         prodetail:ProdDeta,
+        //         Catname:catname
+        //     }
+        productRepo.loadOneProduct(proName).then(rows => {
+            console.log(rows);
+            var vm = {
+                product: rows[0]
+            };
+            res.render('product/proDetail', vm);
+        });
 
+   
+       // });
+
+});
 
 module.exports = router;
