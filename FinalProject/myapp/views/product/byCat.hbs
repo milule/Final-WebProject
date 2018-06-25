@@ -1,88 +1,104 @@
-{{#section 'title'}}
-	Product List
-{{/section}}
-<div style="padding:90px;text-align:center;" class="allcontain brandstyle">
-	<div style="margin-top:20px;color:rgb(26, 76, 109);font-weight:bold;">
+{{#section 'title'}} Product List {{/section}}
+	<div class="allcontain brandstyle" style="margin-top:20px;color:rgb(26, 76, 109);font-weight:bold;
+	padding:80px;text-align:center;>
+		<img src="/image/brand.png" style="width: 400px;height: 188px;text-align: center;">
 		<h1 style="font-size:50px">{{categoryName}}</h1>
 	</div>
-</div>
 <div class="contain-fluid" style="font-weight:bold">
-			<div class="col-sm-3 col-md-3 ">
-				<div class="panel panel-primary">
-					<div class="panel-heading ">
-						<h2 class="panel-title">Loại xe</h2>
-					</div>
-					<div class="panel-body">
-					<table class="table" style="font-size:50px">
-						{{#each categories}}
-						<tr><a href="/byCat/{{CatID}}" class="list-group-item">{{CatName}}</a></tr>
-						{{/each}}
-					</table>
-					</div>
-				</div>
+	<div class="col-sm-3 col-md-3 ">
+		<div class="panel panel-primary">
+			<div class="panel-heading ">
+				<h1 class="panel-title" style="text-align: center;font-size:30px">Loại xe</h1>
 			</div>
-{{#if noProducts}}
+			<div class="panel-body">
+				<table class="table" style="font-size:50px">
+					{{#each categories}}
+					<tr>
+						<a href="/byCat/{{CatID}}" class="list-group-item">{{CatName}}</a>
+					</tr>
+					{{/each}}
+				</table>
+			</div>
+		</div>
+	</div>
+	{{#if noProducts}}
 
 	<div class="col-sm-9 col-md-9 ">
 		Không có sản phẩm thoả yêu cầu.
 	</div>
-{{else}}
-<div class="col-sm-9 col-md-9 ">
-<div class="container-fluid">
-		<div class="row">
-	{{#each products}}
-
-	<div class="col-sm-3 col-md-4 ">
-		<div class="thumbnail">
-			<img src="/image/products/{{ProID}}/1.jpg" alt="{{ProName}}" title="{{ProName}}">
-			<div class="caption" >
-				<h3 style="color:brown;font-weight:bold">{{ProName}}</h3>
-				<h4 style="color:darkslategray;text-align:center;font-weight:bold">{{number_format Price}} &dollar;</h4>
-				<p style="min-height: 60px">{{TinyDes}}</p>
-				<p>
-					<a href="/detail/{{ProName}}" class="btn btn-primary" role="button">
-						<span class="glyphicon glyphicon-eye-open"></span>
-						Detail
-					</a>
-					<a href="#" class="btn btn-danger" role="button">
-						<span class="glyphicon glyphicon-shopping-cart"></span>
-					</a>
-				</p>
+	{{else}}
+	<div class="col-sm-9 col-md-9 ">
+		<div class="panel panel-primary">
+			<div class="panel-heading ">
+				<h1 class="panel-title" style="text-align: center;font-size:30px">Sản Phẩm</h1>
 			</div>
+			<div class="row" style="margin-top:20px;">
+				{{#each products}}
+
+				<div class="col-sm-3 col-md-4 ">
+					<div class="thumbnail boxpro">
+						<img src="/image/products/{{ProID}}/1.jpg" alt="{{ProName}}" title="{{ProName}}">
+						<div class="caption">
+							<h3 style="color:brown;font-weight:bold">{{ProName}}</h3>
+							<h4 style="color:darkslategray;text-align:center;font-weight:bold">{{number_format Price}} &dollar;</h4>
+							<p style="min-height: 60px">{{TinyDes}}</p>
+							<p>
+								<a href="/{{CatID}}/{{ProName}}" class="btn btn-primary" role="button">
+									<span class="glyphicon glyphicon-menu-right"></span>
+									Xem chi tiết
+								</a>
+								<a href="#" class="btn btn-danger" role="button">
+									<span class="glyphicon glyphicon-shopping-cart"></span>
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				{{/each}}
+			</div>
+
 		</div>
 	</div>
-	
-	{{/each}}
-	</div>
-	
-</div>
-</div>
-<div class="row">
-	<div class="col-md-3 col-md-offset-7 ">	
-<ul class="pagination" >
-	{{#if firstPage}}
-	<li class="disabled" href="javascript:;">
-		<a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a>
-	</li>
-	{{else}}
-	<li><a href="?page=1" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-	{{/if}}
-	{{#each page_numbers}}
-		{{#if isCurPage}}
-			<li class="active"><a href="javascript:;">{{value}}</a></li>
-		{{else}}
-			<li><a href="?page={{value}}">{{value}}</a></li>
-		{{/if}}
-	{{/each}}
-	{{#if lastPage}}
-		<li class="disabled" href="javascript:;">
-		<a href="#" aria-label="Next"><span aria-hidden="true">»</span></a>
-		</li>
-		{{else}}
-		<li><a href="?page={{num_page}}" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-	{{/if}}
-	</ul>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-7 ">
+			<ul class="pagination">
+				{{#if firstPage}}
+				<li class="disabled" href="javascript:;">
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">«</span>
+					</a>
+				</li>
+				{{else}}
+				<li>
+					<a href="?page=1" aria-label="Previous">
+						<span aria-hidden="true">«</span>
+					</a>
+				</li>
+				{{/if}} {{#each page_numbers}} {{#if isCurPage}}
+				<li class="active">
+					<a href="javascript:;">{{value}}</a>
+				</li>
+				{{else}}
+				<li>
+					<a href="?page={{value}}">{{value}}</a>
+				</li>
+				{{/if}} {{/each}} {{#if lastPage}}
+				<li class="disabled" href="javascript:;">
+					<a href="#" aria-label="Next">
+						<span aria-hidden="true">»</span>
+					</a>
+				</li>
+				{{else}}
+				<li>
+					<a href="?page={{num_page}}" aria-label="Next">
+						<span aria-hidden="true">»</span>
+					</a>
+				</li>
+				{{/if}}
+			</ul>
 
-</div>
-</div>
-{{/if}}
+		</div>
+	</div>
+	{{/if}}
+

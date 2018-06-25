@@ -1,6 +1,7 @@
-{{#section 'title'}} Product Detail {{/section}} 
+{{#section 'title'}} Product Detail {{/section}}
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/style/mystyle.css">
 <style>
-
     .mySlides {
         display: none
     }
@@ -9,9 +10,7 @@
         cursor: pointer
     }
 </style>
-<link rel="stylesheet" type="text/css" href="/style/w3.css"> 
-
-{{#with product}}
+<link rel="stylesheet" type="text/css" href="/style/w3.css"> {{#with product}}
 <div style="text-align: center;">
     <h1 class="garm">{{ProName}}</h1>
     <img src="/image/line.svg">
@@ -20,23 +19,23 @@
     <div style="padding-top: 50px;padding-bottom: 50px">
         <div class="row">
             <div class="col-md-6">
-                <img class="mySlides img-rounded" src="/image/Fe-detail3.jpg" style="width:100%;box-shadow: 2px 2px 30px">
-                <img class="mySlides img-rounded" src="/image/Fe-detail4.jpg" style="width:100%;box-shadow: 2px 2px 30px">
-                <img class="mySlides img-rounded" src="/image/Fe-detail2.jpg" style="width:100%;box-shadow: 2px 2px 30px">
-                <img class="mySlides img-rounded" src="/image/Fe-detail1.jpg" style="width:100%;box-shadow: 2px 2px 30px">
+                <img class="mySlides img-rounded" src="/image/products/{{ProID}}/1.jpg" style="width:100%;box-shadow: 2px 2px 30px">
+                <img class="mySlides img-rounded" src="/image/products/{{ProID}}/2.jpg" style="width:100%;box-shadow: 2px 2px 30px">
+                <img class="mySlides img-rounded" src="/image/products/{{ProID}}/3.jpg" style="width:100%;box-shadow: 2px 2px 30px">
+                <img class="mySlides img-rounded" src="/image/products/{{ProID}}/4.jpg" style="width:100%;box-shadow: 2px 2px 30px">
                 <div style="margin: 10px 0px 0px 10px">
                     <div class="col-md-3">
-                        <img class="demo w3-opacity w3-hover-opacity-off" src="/image/Fe-detail3.jpg" style="width:95%" onclick="currentDiv(1)">
+                        <img class="demo w3-opacity w3-hover-opacity-off" src="/image/products/{{ProID}}/3.jpg" style="width:95%" onclick="currentDiv(1)">
                     </div>
                     <div class="col-md-3" ">
-                        <img class="demo w3-opacity w3-hover-opacity-off " src="/image/Fe-detail4.jpg " style="width:95%
+                        <img class="demo w3-opacity w3-hover-opacity-off " src="/image/products/{{ProID}}/4.jpg" style="width:95%
                         " onclick="currentDiv(2) ">
                     </div>
                     <div class="col-md-3 "">
-                        <img class="demo w3-opacity w3-hover-opacity-off" src="/image/Fe-detail2.jpg" style="width:95%" onclick="currentDiv(3)">
+                        <img class="demo w3-opacity w3-hover-opacity-off" src="/image/products/{{ProID}}/2.jpg" style="width:95%" onclick="currentDiv(3)">
                     </div>
                     <div class="col-md-3" ">
-                        <img class="demo w3-opacity w3-hover-opacity-off " src="/image/Fe-detail1.jpg " style="width:95%
+                        <img class="demo w3-opacity w3-hover-opacity-off " src="/image/products/{{ProID}}/1.jpg" style="width:95%
                         " onclick="currentDiv(4) ">
                     </div>
                 </div>
@@ -83,32 +82,160 @@
     </div>
 {{/with}}
 
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
+{{!-- //-----------------------------The Same Product By Cat------------------------- --}}
+<div style="padding-top: 50px ">
+        <div class="panel panel-default " >
+            <div class="panel-heading " style="background-color: #900C3F;color: white; border-style: solid; border-top-right-radius:
+                        6px;border-top-center-radius: 6px;font-size: 20px ">Sản Phẩm Cùng Loại</div>
+            <div class="panel-body ">
+                <div class="grid ">
+                    <div class="row ">
+                    {{#if noProSame}}
+                    <p>Không có sản phẩm nào cùng loại</p>
+                    {{else}}
+                    {{#each rowspro}}
+                       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                            <div class="txthover ">
+                                <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 374px;">
+                                <div class="txtcontent ">
+                                    <div class="stars ">
+                                        <div class="glyphicon glyphicon-star "></div>
+                                        <div class="glyphicon glyphicon-star "></div>
+                                        <div class="glyphicon glyphicon-star "></div>
+                                    </div>
+                                    <div class="simpletxt ">
+                                        <h3 class="name " title=" ">{{ProName}}</h3>
+                                        <p>"{{TinyDes}}" </p>
+                        <span style="color: white">Số lượng đã bán:
+                            <span class="countsp">{{Quantity}}</span>
+                        </span>
+                        <br>
+                        <span style="color: white">Số lượt xem:
+                            <span class="countview">{{Seen}}</span>
+                        </span>
+                        <h4 class="price"> {{Price}}&euro;</h4>
+                        <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
+                        <a href="Detail2.html" class="btn btn-default">Xem thêm</a>
+                        <br>
+                        <div class="wishtxt">
+                            <p class="paragraph1"> Add to Wishlist
+                                <span class="glyphicon glyphicon-heart"></span>
+                            </p>
+                            <p class="paragraph2">Compare
+                                <span class="icon">
+                                    <img src="/image/compicon.png" alt="compicon">
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="stars2">
+                        <div class="glyphicon glyphicon-star"></div>
+                        <div class="glyphicon glyphicon-star"></div>
+                        <div class="glyphicon glyphicon-star"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
+{{!-- //-----------------------------The Same Product By Manu------------------------- --}}
+<div style="padding-top: 50px ">
+        <div class="panel panel-default " >
+            <div class="panel-heading " style="background-color:green;color: white; border-style: solid; border-top-right-radius:
+                        6px;border-top-center-radius: 6px;font-size: 20px ">Sản Phẩm Cùng Nhà Sản Xuất</div>
+            <div class="panel-body ">
+                <div class="grid ">
+                    <div class="row ">
+                    {{#if noProManu}}
+                    <p>Không có sản phẩm nào cùng loại</p>
+                    {{else}}
+                    {{#each rowspromn}}
+                       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                            <div class="txthover ">
+                                <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 374px;">
+                                <div class="txtcontent ">
+                                    <div class="stars ">
+                                        <div class="glyphicon glyphicon-star "></div>
+                                        <div class="glyphicon glyphicon-star "></div>
+                                        <div class="glyphicon glyphicon-star "></div>
+                                    </div>
+                                    <div class="simpletxt ">
+                                        <h3 class="name " title=" ">{{ProName}}</h3>
+                                        <p>"{{TinyDes}}" </p>
+                        <span style="color: white">Số lượng đã bán:
+                            <span class="countsp">{{Quantity}}</span>
+                        </span>
+                        <br>
+                        <span style="color: white">Số lượt xem:
+                            <span class="countview">{{Seen}}</span>
+                        </span>
+                        <h4 class="price"> {{Price}}&euro;</h4>
+                        <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
+                        <a href="Detail2.html" class="btn btn-default">Xem thêm</a>
+                        <br>
+                        <div class="wishtxt">
+                            <p class="paragraph1"> Add to Wishlist
+                                <span class="glyphicon glyphicon-heart"></span>
+                            </p>
+                            <p class="paragraph2">Compare
+                                <span class="icon">
+                                    <img src="/image/compicon.png" alt="compicon">
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="stars2">
+                        <div class="glyphicon glyphicon-star"></div>
+                        <div class="glyphicon glyphicon-star"></div>
+                        <div class="glyphicon glyphicon-star"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{{!-- ----------------------------------------------------------------- --}}
+
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides ");
+        var dots = document.getElementsByClassName("demo ");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none ";
         }
-
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-opacity-off ", " ");
         }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides ");
-            var dots = document.getElementsByClassName("demo ");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none ";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" w3-opacity-off ", " ");
-            }
-            x[slideIndex - 1].style.display = "block ";
-            dots[slideIndex - 1].className += " w3-opacity-off ";
-        }
-    </script>
-
+        x[slideIndex - 1].style.display = "block ";
+        dots[slideIndex - 1].className += " w3-opacity-off ";
+    }
+</script>

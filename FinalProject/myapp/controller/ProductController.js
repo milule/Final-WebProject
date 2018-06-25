@@ -61,31 +61,26 @@ router.get('/byCat/:catID', (req, res) => {
     });
 });
 
-router.get('/detail/:proName', (req, res) => {
-        var catID=req.params.catID;
+router.get('/:catId/:proName', (req, res) => {
         var proName= req.params.proName;
-        console.log(proName);
-       // var p1=productRepo.loadOneProduct(proID);
-        // var p2=productRepo.loadCatName(catID);
-       // console.log(p1);
-        // Promise.all([p1, p2]).then(([ProdDeta, catname]) => {
-        //      console.log(ProdDeta);
-        //      console.log(catname);
-        //     var vm={
-        //         prodetail:ProdDeta,
-        //         Catname:catname
-        //     }
         productRepo.loadOneProduct(proName).then(rows => {
-            console.log(rows);
-            var vm = {
-                product: rows[0]
-            };
-            res.render('product/proDetail', vm);
+           // console.log(rows[0].CatID);
+            var catID=rows[0].CatID;
+            var proManu=rows[0].Manufacturer;
+            var p1=productRepo.loadSamePro(catID);
+            var p2=productRepo.loadSameManu(proManu);
+            Promise.all([p1, p2]).then(([SamePro, ManuPro]) => {
+                console.log(ManuPro);
+                var vm = {
+                    product: rows[0],
+                    rowspro: SamePro,
+                    rowspromn: ManuPro,
+                    noProSame: SamePro.length===0,
+                    noProManu: ManuPro.length===0
+                };
+                res.render('product/proDetail', vm);
+            });        
         });
-
-   
-       // });
-
 });
 
 module.exports = router;

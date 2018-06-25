@@ -30,7 +30,13 @@ exports.loadOneProduct = proName => {
 	var sql =  `select * from products where ProName = '${proName}'`;
     return db.load(sql);
 }
-exports.loadCatName = catID => {
-	var sql = `select CatName from categories where CatID = ${catID}`;
+
+exports.loadSamePro = catID => {
+    var sql = `select * from products where CatID = ${catID} limit ${config.PRODUCTS_PER_CAT}` ;
+    return db.load(sql);
+}
+
+exports.loadSameManu = Manu => {
+    var sql =  `select * from products where Manufacturer = '${Manu}' limit ${config.PRODUCTS_PER_CAT}`;
     return db.load(sql);
 }
