@@ -25,6 +25,7 @@ router.get('/byCat/:catID', (req, res) => {
     if (!page) {
         page = 1;
     }
+    console.log(catID);
     var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
     var p1 = productRepo.loadAllByCat(catID, offset);
     var p2 = productRepo.countByCat(catID);
@@ -59,33 +60,6 @@ router.get('/byCat/:catID', (req, res) => {
         };
         res.render('product/byCat', vm);
     });
-});
-
-router.get('/detail/:proName', (req, res) => {
-        var catID=req.params.catID;
-        var proName= req.params.proName;
-        console.log(proName);
-       // var p1=productRepo.loadOneProduct(proID);
-        // var p2=productRepo.loadCatName(catID);
-       // console.log(p1);
-        // Promise.all([p1, p2]).then(([ProdDeta, catname]) => {
-        //      console.log(ProdDeta);
-        //      console.log(catname);
-        //     var vm={
-        //         prodetail:ProdDeta,
-        //         Catname:catname
-        //     }
-        productRepo.loadOneProduct(proName).then(rows => {
-            console.log(rows);
-            var vm = {
-                product: rows[0]
-            };
-            res.render('product/proDetail', vm);
-        });
-
-   
-       // });
-
 });
 router.get('/:catId/:proName', (req, res) => {
     var proName= req.params.proName;
