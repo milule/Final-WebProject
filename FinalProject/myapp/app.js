@@ -8,9 +8,9 @@ var exphbs_section = require('express-handlebars-sections');
 var wnumb = require('wnumb');
 var session = require('express-session');
 
-var indexRouter = require('./controller/ProductController');
+var productController = require('./controller/ProductController');
 var cartController = require('./controller/CartController');
-
+var homeController = require('./controller/HomeController')
 var app = express();
 
 app.engine('hbs', exphbs({
@@ -47,10 +47,14 @@ app.use(session({
     //     secure: true
     // }
 }))
+app.get('/', (req, res) => {
+    res.redirect('/home');
+  });
 
-
-app.use('/', indexRouter);
+app.use('/', productController);
 app.use('/cart', cartController);
+app.use('/home', homeController);
+
 
 
 // catch 404 and forward to error handler

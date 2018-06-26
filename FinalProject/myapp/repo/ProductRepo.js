@@ -45,3 +45,18 @@ exports.single = id => {
     var sql = `select * from products where ProID = ${id}`;
     return db.load(sql);
 }
+
+exports.loadDateSort = () => {
+    var sql = `select * from products order by DateAdded desc limit 10`;
+    return db.load(sql);
+}
+
+exports.loadSeenSort = () =>{
+    var sql = `select * from products order by Seen desc limit 10`;
+    return db.load(sql);
+}
+
+exports.loadQuantitySort = () =>{
+    var sql = `select * from products order by Quantity desc limit 10`;
+    return db.load(sql);
+}
