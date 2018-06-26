@@ -15,6 +15,10 @@ exports.loadAllC = () => {
 //     var sql = `select * from products where CatID = ${catId}`;
 //     return db.load(sql);
 // }
+exports.findCatID = catname =>{
+    var sql = `select * from categories where CatName = '${catname}'`;
+    return db.load(sql);
+}
 
 exports.loadAllByCat = (catID, offset) => {
     var sql = `select * from products where CatID = ${catID} limit ${config.PRODUCTS_PER_PAGE} offset ${offset}`;
@@ -22,7 +26,7 @@ exports.loadAllByCat = (catID, offset) => {
 }
 
 exports.countByCat = catID => {
-	var sql = `select count(*) as total from products where CatID = ${catID}`;
+	var sql = `select count(*) as total from products where CatID = ${catID} `;
     return db.load(sql);
 }
 
@@ -58,5 +62,20 @@ exports.loadSeenSort = () =>{
 
 exports.loadQuantitySort = () =>{
     var sql = `select * from products order by Quantity desc limit 10`;
+    return db.load(sql);
+}
+
+exports.loadAllByManufac = (manu,offset) => {
+    var sql = `select * from products where Manufacturer = '${manu}'limit ${config.PRODUCTS_PER_PAGE} offset ${offset}`
+    return db.load(sql);
+}
+
+exports.countByManufac = manu => {
+    var sql = `select count(*) as total from products where Manufacturer = '${manu}'`
+    return db.load(sql);
+}
+
+exports.loadManufac = () =>{
+    var sql = `select distinct Manufacturer from products`
     return db.load(sql);
 }

@@ -2,7 +2,7 @@
 	<div class="allcontain brandstyle" style="margin-top:20px;color:rgb(26, 76, 109);font-weight:bold;
 	padding:80px;text-align:center;>
 		<img src="/image/brand.png" style="width: 400px;height: 188px;text-align: center;">
-		<h1 style="font-size:50px">{{categoryName}}</h1>
+		<h1 style="font-size:50px">{{Manufac}}</h1>
 	</div>
 <div class="contain-fluid" style="font-weight:bold">
 	<div class="col-sm-3 col-md-3 ">
@@ -12,9 +12,9 @@
 			</div>
 			<div class="panel-body">
 				<table class="table" style="font-size:50px">
-					{{#each categories}}
+					{{#each manuf}}
 					<tr>
-						<a href="/category/{{CatName}}" class="list-group-item">{{CatName}}</a>
+						<a href="/manufac/{{Manufacturer}}" class="list-group-item">{{Manufacturer}}</a>
 					</tr>
 					{{/each}}
 				</table>
