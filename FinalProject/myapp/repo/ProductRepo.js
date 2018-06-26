@@ -40,3 +40,8 @@ exports.loadSameManu = Manu => {
     var sql =  `select * from products where Manufacturer = '${Manu}' limit ${config.PRODUCTS_PER_CAT}`;
     return db.load(sql);
 }
+
+exports.single = id => {
+    var sql = `select * from products where ProID = ${id}`;
+    return db.load(sql);
+}

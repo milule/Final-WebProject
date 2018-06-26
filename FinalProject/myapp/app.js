@@ -6,7 +6,10 @@ var logger = require('morgan');
 var exphbs = require('express-handlebars');
 var exphbs_section = require('express-handlebars-sections');
 var wnumb = require('wnumb');
+var session = require('express-session');
+
 var indexRouter = require('./controller/ProductController');
+var cartController = require('./controller/CartController');
 
 var app = express();
 
@@ -35,7 +38,19 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// session
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    // cookie: {
+    //     secure: true
+    // }
+}))
+
+
 app.use('/', indexRouter);
+app.use('/cart', cartController);
 
 
 // catch 404 and forward to error handler

@@ -7,7 +7,7 @@ exports.loadAll = () => {
 
 exports.single = (id) => {
     return new Promise((resolve, reject) => {
-        var sql = `select * from categories where CatId = ${id}`;
+        var sql = `select * from categories where CatID = ${id}`;
         db.load(sql).then(rows => {
             if (rows.length === 0) {
                 resolve(null);
