@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
 
 app.use('/', productController);
 app.use('/cart', cartController);
-app.use('/home', homeController);
+app.use('/', homeController);
 
 
 

@@ -31,7 +31,7 @@ exports.countByCat = catID => {
 }
 
 exports.loadOneProduct = proName => {
-	var sql =  `select * from products where ProName = '${proName}'`;
+	var sql =  `select * from products where ProName = '${proName}' `;
     return db.load(sql);
 }
 

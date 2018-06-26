@@ -163,3 +163,11 @@ function onFormSubmit(e) {
         window.open('../Web Project/admin.html');
     else alert('Bạn chưa có tài khoản :)');
 }
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 10.8009003, lng: 106.7316933},
+    zoom: 8
+  });
+}

@@ -78,7 +78,6 @@ router.get('/manufac/:manufact', (req, res) => {
         // console.log(CountRows);
         
         var total = CountRows[0].total;
-        console.log(numbers)
         var Pages = total / config.PRODUCTS_PER_PAGE;
         if (total % config.PRODUCTS_PER_PAGE > 0) {
             Pages++;
@@ -90,7 +89,6 @@ router.get('/manufac/:manufact', (req, res) => {
                 isCurPage: i === +page,
             });
         }
-        console.log(numbers)
         var vm = {
             products: ProdRows,
             noProducts: ProdRows.length === 0,
@@ -108,10 +106,8 @@ router.get('/manufac/:manufact', (req, res) => {
 router.get('/:catId/:proName', (req, res) => {
     var proName = req.params.proName;
     productRepo.loadOneProduct(proName).then(rows => {
-        var proManu = rows[0].Manufacturer;
-        console.log(proManu);
         var p1 = productRepo.loadSamePro(rows[0].CatID);
-        var p2 = productRepo.loadSameManu(proManu);
+        var p2 = productRepo.loadSameManu(rows[0].Manufacturer);
         Promise.all([p1, p2]).then(([SamePro, ManuPro]) => {
             //console.log(ManuPro);
             var vm = {
@@ -126,6 +122,8 @@ router.get('/:catId/:proName', (req, res) => {
     });
 });
 
-
+router.post('/:catId/:proName', (req, res) => {
+    console.log(req.body.value)
+});
 
 module.exports = router;
