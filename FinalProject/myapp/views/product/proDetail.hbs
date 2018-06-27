@@ -10,7 +10,9 @@
         cursor: pointer
     }
 </style>
-<link rel="stylesheet" type="text/css" href="/style/w3.css"> {{#with product}}
+<link rel="stylesheet" type="text/css" href="/style/w3.css"> 
+{{#with fullpro}}
+{{#with product}}
 <div style="text-align: center;">
     <h1 class="garm">{{ProName}}</h1>
     <img src="/image/line.svg">
@@ -48,9 +50,9 @@
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  
                         Mô tả: {{FullDes}}
                     </h4>
-                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Xuất sứ: Modena, Italy</h4>
-                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Loại: {{Catname}}</h4>
-                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Nhà sản xuất: {{Origin}}</h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Xuất sứ: {{Origin}}</h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Loại: {{../test}} </h4>
+                    <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Nhà sản xuất: {{Manufacturer}}</h4>
                     <a class="btn-addcart ">
                         <button class="btn btn-danger btn-lg ">Đặt mua hàng  <span class="glyphicon glyphicon-shopping-cart "></span></button>
                     </a>
@@ -80,6 +82,7 @@
             </div>
         </div>
     </div>
+    {{/with}}
 {{/with}}
 {{!-- //-----------------------------The Same Product By Cat------------------------- --}}
 <div style="padding-top: 50px ">
@@ -95,7 +98,7 @@
                     {{#each rowspro}}
                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
                             <div class="txthover ">
-                                <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 374px;">
+                                <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 108%;">
                                 <div class="txtcontent ">
                                     <div class="stars ">
                                         <div class="glyphicon glyphicon-star "></div>
@@ -114,7 +117,7 @@
                         </span>
                         <h4 class="price"> {{Price}}&euro;</h4>
                         <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
-                        <a href="Detail2.html" class="btn btn-default">Xem thêm</a>
+                        <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
                         <br>
                         <div class="wishtxt">
                             <p class="paragraph1"> Add to Wishlist
@@ -158,7 +161,7 @@
                     {{#each rowspromn}}
                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
                             <div class="txthover ">
-                                <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 374px;">
+                                <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 108%;">
                                 <div class="txtcontent ">
                                     <div class="stars ">
                                         <div class="glyphicon glyphicon-star "></div>
@@ -177,7 +180,7 @@
                         </span>
                         <h4 class="price"> {{Price}}&euro;</h4>
                         <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
-                        <a href="Detail2.html" class="btn btn-default">Xem thêm</a>
+                        <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
                         <br>
                         <div class="wishtxt">
                             <p class="paragraph1"> Add to Wishlist

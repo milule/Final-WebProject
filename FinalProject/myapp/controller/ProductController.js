@@ -1,5 +1,6 @@
 var express = require('express');
 var productRepo = require('../repo/ProductRepo');
+var categoryRepo = require('../repo/CategoryRepo');
 var config = require('../config/config');
 var decode = require('unescape');
 var router = express.Router();
@@ -46,7 +47,6 @@ router.get('/category/:catName', (req, res) => {
                     isCurPage: i === +page,
                 });
             }
-            console.log(numbers)
             var vm = {
                 products: ProdRows,
                 noProducts: ProdRows.length === 0,
@@ -105,13 +105,18 @@ router.get('/manufac/:manufact', (req, res) => {
 
 router.get('/:catId/:proName', (req, res) => {
     var proName = req.params.proName;
+    var id= req.params.catId;
     productRepo.loadOneProduct(proName).then(rows => {
+        var p0 = categoryRepo.single(id);
         var p1 = productRepo.loadSamePro(rows[0].CatID);
         var p2 = productRepo.loadSameManu(rows[0].Manufacturer);
-        Promise.all([p1, p2]).then(([SamePro, ManuPro]) => {
-            //console.log(ManuPro);
-            var vm = {
+        Promise.all([p0,p1, p2]).then(([NOC,SamePro, ManuPro]) => {
+            var temp = {
+                test: NOC.CatName,
                 product: rows[0],
+            }
+            var vm = {
+                fullpro:temp,
                 rowspro: SamePro,
                 rowspromn: ManuPro,
                 noProSame: SamePro.length === 0,
@@ -123,7 +128,7 @@ router.get('/:catId/:proName', (req, res) => {
 });
 
 router.post('/:catId/:proName', (req, res) => {
-    console.log(req.body.value)
+    //console.log(req.body.username)
 });
 
 module.exports = router;
