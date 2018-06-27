@@ -127,8 +127,5 @@ router.get('/:catId/:proName', (req, res) => {
     });
 });
 
-router.post('/:catId/:proName', (req, res) => {
-    //console.log(req.body.username)
-});
 
 module.exports = router;

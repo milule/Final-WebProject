@@ -79,3 +79,13 @@ exports.loadManufac = () =>{
     var sql = `select distinct Manufacturer from products`
     return db.load(sql);
 }
+
+exports.loadBySearch = (name,cate,brand) => {
+    var sql = `select * from products where ProName = '${name}' and CatID = ${cate} and Manufacturer= '${brand}'  `
+    return db.load(sql);
+}
+
+exports.loadBySearchOther = (cate,brand) => {
+    var sql = `select * from products where Manufacturer = '${brand}' and CatID = ${cate}  `
+    return db.load(sql);
+}
