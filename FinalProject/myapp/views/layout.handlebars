@@ -17,7 +17,8 @@
     <link rel="stylesheet" type="text/css" href="/cart/main.css">
     <link rel="stylesheet" type="text/css" href="/style/tabstyle.css">
     <link rel="stylesheet" type="text/css" href="/style/texteff.css">
-
+    <link rel="stylesheet" type="text/css" href="/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    {{!-- {{{_sections.css}}} --}}
 </head>
 
 <body>
@@ -27,20 +28,20 @@
             <ul class="givusacall">
                 <li>Give us a call : +66666666 </li>
             </ul>
-            {{#if layoutVM.isLogged}}
-            <div>adsasd</div>
-            {{else}}
-            <ul class="logreg">
-                <li>
-                    <a href="/login">Login </a>
-                </li>
-                <li>
-                    <a href="/register">
-                        <span class="register">Register</span>
-                    </a>
-                </li>
-            </ul>
-            {{/if}}
+           <ul class="logreg">
+                {{#if layoutVM.isLogged}}
+                   <form id="frmLogout" method="post" action="/logout"></form>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{layoutVM.curUser.f_Name}} <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Profile</a></li>
+                            <li><a id="lnkLogout" href="javascript:;">Logout</a></li>
+                        </ul>
+                    </li>
+                {{else}}
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                {{/if}}
             {{!--
             <ul class="logreg">
                 <li>
@@ -178,60 +179,39 @@
                     </li>
 
                     <!-- Icon cart-->
+                    {{#if layoutVM.isLogged}}
                     <li>
                         <div class="header-wrapicon2">
                             <img src="/image/cart/shopping_cart.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                            <span class="header-icons-noti">3</span>
+                            <span class="header-icons-noti">{{layoutVM.cartSummary}}</span>
                             <!-- Header cart noti -->
                             <div class="header-cart header-dropdown">
-                                <ul class="header-cart-wrapitem">
-                                    <li class="header-cart-item">
-                                        <div class="header-cart-item-img">
-                                            <img src="/image/cart/car1.jpg" alt="IMG">
-                                        </div>
-                                        <div class="header-cart-item-txt">
-                                            <a href="Detail1.html" class="header-cart-item-name">
-                                                Rolls Royce
-                                            </a>
-                                            <span class="header-cart-item-info">
-                                                1 x $700.000
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li class="header-cart-item">
-                                        <div class="header-cart-item-img">
-                                            <img src="/image/cart/car4.jpg" alt="IMG">
-                                        </div>
-                                        <div class="header-cart-item-txt">
-                                            <a href="Detail1.html" class="header-cart-item-name">
-                                                Rover
-                                            </a>
-                                            <span class="header-cart-item-info">
-                                                1 x $700.000
-                                            </span>
-                                        </div>
-                                    </li>
-                                    <li class="header-cart-item">
-                                        <div class="header-cart-item-img">
-                                            <img src="/image/cart/car6.jpg" alt="IMG">
-                                        </div>
-                                        <div class="header-cart-item-txt">
-                                            <a href="Detail2.html" class="header-cart-item-name">
-                                                Porche 911
-                                            </a>
-                                            <span class="header-cart-item-info">
-                                                1 x $700.000
-                                            </span>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <tbody id="list">
+                                {{#each items}}
+                                   <ul class="header-cart-wrapitem">
+                                        <li class="header-cart-item">
+                                            <div class="header-cart-item-img">
+                                                <img src="/image/cart/car1.jpg" alt="IMG">
+                                            </div>
+                                            <div class="header-cart-item-txt">
+                                                <a href="/{{Product.CatID}}/{{Product.ProName}}" class="header-cart-item-name">
+                                                    {{Product.ProName}}
+                                                </a>
+                                                <span class="header-cart-item-info">
+                                                    {{Quantity}} x ${{number_format Amount}}
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                {{/each}}
+                                </tbody>
                                 <div class="header-cart-total">
-                                    Tổng tiền: $2.100.000
+                                    Tổng tiền: ${{layoutVM.cartTotal}}
                                 </div>
                                 <div class="header-cart-buttons">
                                     <div class="header-cart-wrapbtn">
                                         <!-- Button -->
-                                        <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                        <a href="/cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                             Xem giỏ hàng
                                         </a>
                                     </div>
@@ -245,6 +225,7 @@
                             </div>
                         </div>
                     </li>
+                    {{/if}}
 
                 </ul>
             </div>
@@ -389,6 +370,35 @@
     <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" src="/cart/animsition.min.js"></script>
     <script src="/cart/main.js"></script>
+    <script type="text/javascript">
+        $('#lnkLogout').on('click', function() {
+            $('#frmLogout').submit();
+        });
+    </script>
+    
+    <script src="/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        $('#txtDOB').datepicker({
+            format: 'd/m/yyyy',
+            autoclose: true
+        });
+
+        var validate = function() {
+            if ($('#txtUsername').val().length === 0) {
+                alert('Error');
+                return false;
+            }
+
+            if ($('#txtPWD').val() !== $('#txtCPWD').val()) {
+                alert('not match');
+                return false;
+            }
+
+            return true;
+        };
+    </script>
+
+    {{!-- {{{_sections.js}}} --}}
 </body>
 
 </html>
