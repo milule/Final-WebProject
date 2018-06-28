@@ -44,36 +44,42 @@
     <!-- ________________________LATEST CARS SECTION _______________________-->
     <div class="latestcars">
         <h1 class="text-center">&bullet; Sản Phẩm &bullet;</h1>
-    <ul class="nav nav-pills nav-justified">
-        <li class="active" style="font-weight:bold">
-            <a data-toggle="tab" href="#home" ><h4>SẢN PHẨM MỚI NHẤT</h4></a>
-        </li>
-        <li>
-            <a data-toggle="tab" href="#menu1"><h4>SẢN PHẨM BÁN CHẠY NHẤT</h4></a>
-        </li>
-        <li>
-            <a data-toggle="tab" href="#menu2"><h4>SẢN PHẨM XEM NHIỀU NHẤT</h4></a>
-        </li>
-    </ul>
- </div>
-<div style="margin-bottom:15px"></div>
+        <ul class="nav nav-pills nav-justified">
+            <li class="active" style="font-weight:bold">
+                <a data-toggle="tab" href="#home">
+                    <h4>SẢN PHẨM MỚI NHẤT</h4>
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#menu1">
+                    <h4>SẢN PHẨM BÁN CHẠY NHẤT</h4>
+                </a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#menu2">
+                    <h4>SẢN PHẨM XEM NHIỀU NHẤT</h4>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div style="margin-bottom:15px"></div>
     <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
-            <div class="grid" >
-                <div class="row">
+            <div class="grid ">
+                <div class="row ">
                     {{#each dateS}}
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="txthover">
-                            <img src="/image/products/{{ProID}}/home.jpg" style="width:max-content">
-                            <div class="txtcontent">
-                                <div class="stars">
-                                    <div class="glyphicon glyphicon-star"></div>
-                                    <div class="glyphicon glyphicon-star"></div>
-                                    <div class="glyphicon glyphicon-star"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                        <div class="txthover ">
+                            <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 109%;">
+                            <div class="txtcontent ">
+                                <div class="stars ">
+                                    <div class="glyphicon glyphicon-star "></div>
+                                    <div class="glyphicon glyphicon-star "></div>
+                                    <div class="glyphicon glyphicon-star "></div>
                                 </div>
-                                <div class="simpletxt">
-                                    <h3 class="name" title="">{{ProName}}</h3>
-                                    <p>"{{TinyDes}}"</p>
+                                <div class="simpletxt ">
+                                    <h3 class="name " title=" ">{{ProName}}</h3>
+                                    <p>"{{TinyDes}}" </p>
                                     <span style="color: white">Số lượng đã bán:
                                         <span class="countsp">{{Quantity}}</span>
                                     </span>
@@ -81,8 +87,8 @@
                                     <span style="color: white">Số lượt xem:
                                         <span class="countview">{{Seen}}</span>
                                     </span>
-                                    <h4 class="price"> {{number_format Price}}&dollar;</h4>
-                                    <span class="date" style="color: white;font-weight: bold">{{DateAdded}}</span>
+                                    <h4 class="price"> {{Price}}&euro;</h4>
+                                    <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
                                     <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
                                     <br>
                                     <div class="wishtxt">
@@ -109,104 +115,103 @@
             </div>
         </div>
         <div id="menu1" class="tab-pane fade in active">
-            <div class="grid">
-            <div class="row">
-                {{#each quantityS}}
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="txthover">
-                        <img src="/image/products/{{ProID}}/home.jpg" style="width:max-content">
-                        <div class="txtcontent">
-                            <div class="stars">
-                                <div class="glyphicon glyphicon-star"></div>
-                                <div class="glyphicon glyphicon-star"></div>
-                                <div class="glyphicon glyphicon-star"></div>
-                            </div>
-                            <div class="simpletxt">
-                                <h3 class="name" title="">{{ProName}}</h3>
-                                <p>"{{TinyDes}}"</p>
-                                <span style="color: white">Số lượng đã bán:
-                                    <span class="countsp">{{Quantity}}</span>
-                                </span>
-                                <br>
-                                <span style="color: white">Số lượt xem:
-                                    <span class="countview">{{Seen}}</span>
-                                </span>
-                                <h4 class="price"> {{number_format Price}}&dollar;</h4>
-                                <span class="date" style="color: white;font-weight: bold">{{DateAdded}}</span>
-                                <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
-                                <br>
-                                <div class="wishtxt">
-                                    <p class="paragraph1"> Add to Wishlist
-                                        <span class="glyphicon glyphicon-heart"></span>
-                                    </p>
-                                    <p class="paragraph2">Compare
-                                        <span class="icon">
-                                            <img src="/image/compicon.png" alt="compicon">
-                                        </span>
-                                    </p>
+            <div class="grid ">
+                <div class="row ">
+                    {{#each dateS}}
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                        <div class="txthover ">
+                            <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 109%;">
+                            <div class="txtcontent ">
+                                <div class="stars ">
+                                    <div class="glyphicon glyphicon-star "></div>
+                                    <div class="glyphicon glyphicon-star "></div>
+                                    <div class="glyphicon glyphicon-star "></div>
                                 </div>
-                            </div>
-                            <div class="stars2">
-                                <div class="glyphicon glyphicon-star"></div>
-                                <div class="glyphicon glyphicon-star"></div>
-                                <div class="glyphicon glyphicon-star"></div>
+                                <div class="simpletxt ">
+                                    <h3 class="name " title=" ">{{ProName}}</h3>
+                                    <p>"{{TinyDes}}" </p>
+                                    <span style="color: white">Số lượng đã bán:
+                                        <span class="countsp">{{Quantity}}</span>
+                                    </span>
+                                    <br>
+                                    <span style="color: white">Số lượt xem:
+                                        <span class="countview">{{Seen}}</span>
+                                    </span>
+                                    <h4 class="price"> {{Price}}&euro;</h4>
+                                    <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
+                                    <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
+                                    <br>
+                                    <div class="wishtxt">
+                                        <p class="paragraph1"> Add to Wishlist
+                                            <span class="glyphicon glyphicon-heart"></span>
+                                        </p>
+                                        <p class="paragraph2">Compare
+                                            <span class="icon">
+                                                <img src="/image/compicon.png" alt="compicon">
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="stars2">
+                                    <div class="glyphicon glyphicon-star"></div>
+                                    <div class="glyphicon glyphicon-star"></div>
+                                    <div class="glyphicon glyphicon-star"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
-            </div>
-        </div>
-        </div>
+            </div>           
+        </div>        
         <div id="menu2" class="tab-pane fade in active">
-            <div class="grid">
-            <div class="row">
-                {{#each seenS}}
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="txthover">
-                        <img src="/image/products/{{ProID}}/home.jpg" style="width:max-content">
-                        <div class="txtcontent">
-                            <div class="stars">
-                                <div class="glyphicon glyphicon-star"></div>
-                                <div class="glyphicon glyphicon-star"></div>
-                                <div class="glyphicon glyphicon-star"></div>
-                            </div>
-                            <div class="simpletxt">
-                                <h3 class="name" title="">{{ProName}}</h3>
-                                <p>"{{TinyDes}}"</p>
-                                <span style="color: white">Số lượng đã bán:
-                                    <span class="countsp">{{Quantity}}</span>
-                                </span>
-                                <br>
-                                <span style="color: white">Số lượt xem:
-                                    <span class="countview">{{Seen}}</span>
-                                </span>
-                                <h4 class="price"> {{number_format Price}}&dollar;</h4>
-                                <span class="date" style="color: white;font-weight: bold">{{DateAdded}}</span>
-                                <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
-                                <br>
-                                <div class="wishtxt">
-                                    <p class="paragraph1"> Add to Wishlist
-                                        <span class="glyphicon glyphicon-heart"></span>
-                                    </p>
-                                    <p class="paragraph2">Compare
-                                        <span class="icon">
-                                            <img src="/image/compicon.png" alt="compicon">
-                                        </span>
-                                    </p>
+            <div class="grid ">
+                <div class="row ">
+                    {{#each seenS}}
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
+                        <div class="txthover ">
+                            <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 109%;">
+                            <div class="txtcontent ">
+                                <div class="stars ">
+                                    <div class="glyphicon glyphicon-star "></div>
+                                    <div class="glyphicon glyphicon-star "></div>
+                                    <div class="glyphicon glyphicon-star "></div>
                                 </div>
-                            </div>
-                            <div class="stars2">
-                                <div class="glyphicon glyphicon-star"></div>
-                                <div class="glyphicon glyphicon-star"></div>
-                                <div class="glyphicon glyphicon-star"></div>
+                                <div class="simpletxt ">
+                                    <h3 class="name " title=" ">{{ProName}}</h3>
+                                    <p>"{{TinyDes}}" </p>
+                                    <span style="color: white">Số lượng đã bán:
+                                        <span class="countsp">{{Quantity}}</span>
+                                    </span>
+                                    <br>
+                                    <span style="color: white">Số lượt xem:
+                                        <span class="countview">{{Seen}}</span>
+                                    </span>
+                                    <h4 class="price"> {{Price}}&euro;</h4>
+                                    <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
+                                    <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
+                                    <br>
+                                    <div class="wishtxt">
+                                        <p class="paragraph1"> Add to Wishlist
+                                            <span class="glyphicon glyphicon-heart"></span>
+                                        </p>
+                                        <p class="paragraph2">Compare
+                                            <span class="icon">
+                                                <img src="/image/compicon.png" alt="compicon">
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="stars2">
+                                    <div class="glyphicon glyphicon-star"></div>
+                                    <div class="glyphicon glyphicon-star"></div>
+                                    <div class="glyphicon glyphicon-star"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
-            </div>
-        </div>
+            </div>                       
         </div>
     </div>
-</div>

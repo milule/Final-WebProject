@@ -1,0 +1,219 @@
+{{#section 'title'}}Admin Dashboard{{/section}}
+<link rel="stylesheet" type="text/css" href="/style/tabstyle.css">
+
+<div class="wrapper">
+  <h4 class="hit-the-floor">ADMIN</h4>
+</div>
+<div class="allcontain">
+  <section id="fancyTabWidget" class="tabs t-tabs">
+    <ul class="nav nav-tabs fancyTabs" role="tablist">
+      <li class="tab fancyTab active">
+        <div class="arrow-down">
+          <div class="arrow-down-inner"></div>
+        </div>
+        <a id="tab0" href="#tabBody0" role="tab" aria-controls="tabBody0" aria-selected="true" data-toggle="tab" tabindex="0">
+          <span class="fa fa-shopping-basket"></span>
+          <span class="hidden-xs">Quản lý sản phẩm</span>
+        </a>
+        <div class="whiteBlock"></div>
+      </li>
+
+      <li class="tab fancyTab">
+        <div class="arrow-down">
+          <div class="arrow-down-inner"></div>
+        </div>
+        <a id="tab1" href="#tabBody1" role="tab" aria-controls="tabBody1" aria-selected="true" data-toggle="tab" tabindex="0">
+          <span class="fa fa-tag"></span>
+          <span class="hidden-xs">Quản lý loại sản phẩm</span>
+        </a>
+        <div class="whiteBlock"></div>
+      </li>
+
+      <li class="tab fancyTab">
+        <div class="arrow-down">
+          <div class="arrow-down-inner"></div>
+        </div>
+        <a id="tab2" href="#tabBody2" role="tab" aria-controls="tabBody2" aria-selected="true" data-toggle="tab" tabindex="0">
+          <span class="fa fa-globe"></span>
+          <span class="hidden-xs">Quản lý hãng sản xuất</span>
+        </a>
+        <div class="whiteBlock"></div>
+      </li>
+
+      <li class="tab fancyTab">
+        <div class="arrow-down">
+          <div class="arrow-down-inner"></div>
+        </div>
+        <a id="tab3" href="#tabBody3" role="tab" aria-controls="tabBody3" aria-selected="true" data-toggle="tab" tabindex="0">
+          <span class="fa fa-credit-card"></span>
+          <span class="hidden-xs">Quản lý đơn hàng</span>
+        </a>
+        <div class="whiteBlock"></div>
+      </li>
+
+    </ul>
+    <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
+      <div class="tab-pane  fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" aria-hidden="false" tabindex="0">
+        <div class="allcontain" >
+          <div class="row">
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Thêm sản phẩm</button>
+          </div>
+          <table class="table table-bordered">
+            <thead style="color:white;background-color:maroon">
+              <tr>
+                <th style="text-align:center">ID</th>
+                <th style="text-align:center">Tên sản phẩm</th>
+                <th style="text-align:center">Hình ảnh</th>
+                <th style="text-align:center">Loại</th>
+                <th style="text-align:center">Nhà sản xuất</th>
+                <th style="text-align:center">Giá</th>
+                <th style="text-align:center"> </th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each proad}}
+              <tr style="text-align: center">
+                <td >{{ProID}}</td>
+                <td>{{ProName}}</td>
+                <td>
+                  <img src="/image/cart/{{ProID}}.jpg">
+                </td>
+                <td>{{CatName}}</td>
+                <td>{{Manufacturer}}</td>
+                <td>{{number_format Price}}&dollar;</td>
+                <td>
+                  <form action="/delete" method="post">
+                    <div class="form-group">
+                      <input type="hidden" id="" name="ProID" value='{{ProID}}'>
+                    </div>
+                    <button type="submit" class="btn btn-danger">
+                      <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                  </form>
+                  <form action="/update" method="post">
+                    <div class="form-group">
+                      <input type="hidden" id="" name="UpdateID" value='{{ProID}}'>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-5 ">
+              <ul class="pagination">
+                {{#if firstPage}}
+                <li class="disabled" href="javascript:;">
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                  </a>
+                </li>
+                {{else}}
+                <li>
+                  <a href="?page=1" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                  </a>
+                </li>
+                {{/if}} {{#each page_numbers}} {{#if isCurPage}}
+                <li class="active">
+                  <a href="javascript:;">{{value}}</a>
+                </li>
+                {{else}}
+                <li>
+                  <a href="?page={{value}}">{{value}}</a>
+                </li>
+                {{/if}} {{/each}} {{#if lastPage}}
+                <li class="disabled" href="javascript:;">
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                  </a>
+                </li>
+                {{else}}
+                <li>
+                  <a href="?page={{num_page}}" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                  </a>
+                </li>
+                {{/if}}
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane  fade" id="tabBody1" role="tabpanel" aria-labelledby="tab1" aria-hidden="true" tabindex="0">
+        <div class="allcontain">
+          <div class="row">
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Thêm loại sản phẩm</button>
+          </div>          
+          <table class="table table-bordered">
+            <thead style="color:white;background-color:maroon">
+              <tr>
+                <th style="text-align:center">ID</th>
+                <th style="text-align:center">Loại sản phẩm</th>
+                <th style="text-align:center">Số sản phẩm tương ứng</th>
+                <th style="text-align:center"> </th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each catead}}
+              <tr style="text-align:center;">
+                <td>{{CatID}}</td>
+                <td>{{CatName}}</td>
+                <td>{{totalC}}</td>
+                <td>
+                  <button class="btn btn-danger">
+                    <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  </button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-pane  fade" id="tabBody2" role="tabpanel" aria-labelledby="tab2" aria-hidden="true" tabindex="0">
+        <div class="allcontain">
+          <div class="row">
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Thêm hãng SX</button>
+          </div>          
+          <table class="table table-bordered">
+            <thead style="color:white;background-color:maroon">
+              <tr>
+                <th style="text-align:center">Hãng sản xuất</th>
+                <th style="text-align:center">Số sản phẩm tương ứng</th>
+                <th style="text-align:center">Tổng giá trị sản phẩm</th>
+                <th style="text-align:center"> </th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each manuad}}
+              <tr style="text-align:center;">
+                <td>{{Manufacturer}}</td>
+                <td>{{totalM}}</td>
+                <td>{{number_format totalP}}&dollar;</td>
+                <td>
+                  <button class="btn btn-danger">
+                    <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  </button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-pane  fade" id="tabBody3" role="tabpanel" aria-labelledby="tab3" aria-hidden="true" tabindex="0">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Chưa có thông tin gì</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -7,10 +7,15 @@ var exphbs = require('express-handlebars');
 var exphbs_section = require('express-handlebars-sections');
 var wnumb = require('wnumb');
 var session = require('express-session');
+var MySQLStore = require('express-mysql-session')(session);
+
+
+
 var productController = require('./controller/ProductController');
 var cartController = require('./controller/CartController');
 var homeController = require('./controller/HomeController')
 var searchController = require('./controller/SearchController')
+var adminController = require('./controller/AdminController')
 var app = express();
 
 app.engine('hbs', exphbs({
@@ -39,22 +44,41 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 
 // session
+var sessionStore = new MySQLStore({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: '',
+    database: 'cardb',
+    createDatabaseTable: true,
+    schema: {
+        tableName: 'sessions',
+        columnNames: {
+            session_id: 'session_id',
+            expires: 'expires',
+            data: 'data'
+        }
+    }
+});
+
 app.use(session({
-    secret: 'keyboard cat',
+    key: 'session_cookie_name',
+    secret: 'session_cookie_secret',
+    store: sessionStore,
     resave: false,
-    saveUninitialized: true,
-    // cookie: {
-    //     secure: true
-    // }
-}))
+    saveUninitialized: false
+}));
+
+
 app.get('/', (req, res) => {
     res.redirect('/home');
   });
-
+ 
+app.use('/', homeController);
 app.use('/', productController);
 app.use('/cart', cartController);
-app.use('/', homeController);
 app.use('/',searchController);
+app.use('/',adminController);
 
 
 // catch 404 and forward to error handler

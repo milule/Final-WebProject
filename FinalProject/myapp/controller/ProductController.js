@@ -105,12 +105,12 @@ router.get('/manufac/:manufact', (req, res) => {
 
 router.get('/:catId/:proName', (req, res) => {
     var proName = req.params.proName;
-    var id= req.params.catId;
     productRepo.loadOneProduct(proName).then(rows => {
-        var p0 = categoryRepo.single(id);
-        var p1 = productRepo.loadSamePro(rows[0].CatID);
+        var p0 = categoryRepo.single(req.params.catId);
+        var p1 = productRepo.loadSamePro(req.params.catId);
         var p2 = productRepo.loadSameManu(rows[0].Manufacturer);
-        Promise.all([p0,p1, p2]).then(([NOC,SamePro, ManuPro]) => {
+        var p3 = productRepo.updateSeen(rows[0].ProID,rows[0].Seen)
+        Promise.all([p0,p1, p2,p3]).then(([NOC,SamePro, ManuPro,SeenUp]) => {
             var temp = {
                 test: NOC.CatName,
                 product: rows[0],

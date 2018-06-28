@@ -81,11 +81,16 @@ exports.loadManufac = () =>{
 }
 
 exports.loadBySearch = (name,cate,brand) => {
-    var sql = `select * from products where ProName = '${name}' and CatID = ${cate} and Manufacturer= '${brand}'  `
+    var sql = `select * from products where ProName like '${name}' and CatID = ${cate} and Manufacturer= '${brand}'  `
     return db.load(sql);
 }
 
 exports.loadBySearchOther = (cate,brand) => {
     var sql = `select * from products where Manufacturer = '${brand}' and CatID = ${cate}  `
     return db.load(sql);
+}
+
+exports.updateSeen = (id,temp) => {
+    var sql = `update products set Seen=${temp}+1 where ProID=${id}`
+    return db.save(sql);
 }
