@@ -377,6 +377,7 @@
     </script>
     
     <script src="/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    
     <script type="text/javascript">
         $('#txtDOB').datepicker({
             format: 'd/m/yyyy',
@@ -398,7 +399,15 @@
         };
     </script>
 
-    {{!-- {{{_sections.js}}} --}}
+    <script type="text/javascript">
+        $('.removeItem').on('click', function() {
+            var id = $(this).data('proId');
+            $('#txtProId_R').val(id);
+            $('#frmRemoveItem').submit();
+        });
+    </script>
+
+    {{{_sections.js}}}
 </body>
 
 </html>

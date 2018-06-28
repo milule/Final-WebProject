@@ -84,7 +84,7 @@ app.use('/', productController);
 app.use('/cart', cartController);
 app.use('/',searchController);
 app.use('/',adminController);
-app.use('/',accountController);
+app.use('/',restrict,accountController);
 
 
 // catch 404 and forward to error handler
