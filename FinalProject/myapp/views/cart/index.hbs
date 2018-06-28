@@ -49,13 +49,13 @@ Product List
                                 <td class="column-4">{{Quantity}}</td>
                                 <td class="column-5">${{number_format Amount}}</td>
                                 <td class="column-6">
-                                    <a data-proid="{{Product.ProID}}" class="btn btn-xs btn-danger removeItem" href="javascript:;" role="button">
+                                    {{!-- <a data-proid="{{Product.ProID}}" class="btn btn-xs btn-danger removeItem" href="javascript:;" role="button">
                                         <span class="glyphicon glyphicon-remove"></span>
-                                    </a>
-                                   {{!--  <button data-proid="{{Product.ProID}}" href="javascript:;" id="b1" value="Delete" onclick="leteRow(this)"
-                                    class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
+                                    </a> --}}
+                                    <button data-proid="{{Product.ProID}}" href="javascript:;" id="b1" value="Delete" onclick="leteRow(this)"
+                                    class="btn-num-product-down removeItem color1 flex-c-m size7 bg8 eff2">
                                         Xóa
-                                    </button> --}}
+                                    </button>
                                 </td>
                             </tr>
                             {{/each}}

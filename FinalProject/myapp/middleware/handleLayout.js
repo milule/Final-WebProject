@@ -1,4 +1,5 @@
-var categoryRepo = require('../repo/CategoryRepo');
+var categoryRepo = require('../repo/CategoryRepo'),
+    cartRepo = require('../repo/cartRepo');
 
 module.exports = (req, res, next) => {
 
@@ -11,7 +12,9 @@ module.exports = (req, res, next) => {
             categories: rows,
             suppliers: rows,
             isLogged: req.session.isLogged,
-            curUser: req.session.user
+            curUser: req.session.user,
+            cartSummary: cartRepo.getNumberOfItems(req.session.cart),
+            cartTotal: cartRepo.getTotal(req.session.cart)
         };
 
        console.log(res.locals.layoutVM.curUser);
