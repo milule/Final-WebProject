@@ -390,6 +390,56 @@
     <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" src="/cart/animsition.min.js"></script>
     <script src="/cart/main.js"></script>
+<<<<<<< HEAD
+=======
+    <script type="text/javascript">
+        $('#lnkLogout').on('click', function() {
+            $('#frmLogout').submit();
+        });
+    </script>
+    
+    <script src="/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $('#txtDOB').datepicker({
+            format: 'd/m/yyyy',
+            autoclose: true
+        });
+
+        var validate = function() {
+            if ($('#txtUsername').val().length === 0) {
+                alert('Error');
+                return false;
+            }
+
+            if ($('#txtPWD').val() !== $('#txtCPWD').val()) {
+                alert('not match');
+                return false;
+            }
+
+            return true;
+        };
+    </script>
+    
+    <script type="text/javascript">
+        $('.addItem').on('click', function() {
+            var id = $(this).data('proId');
+            $('#txtP').val(id);
+            $('#txtQ').val(1);
+            $('#frmAddItem').submit();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('.removeItem').on('click', function() {
+            var id = $(this).data('proId');
+            $('#txtProId_R').val(id);
+            $('#frmRemoveItem').submit();
+        });
+    </script>
+
+    {{{_sections.js}}}
+>>>>>>> d8177f273d83fb615688d640702a1a9b960d3767
 </body>
 
 </html>

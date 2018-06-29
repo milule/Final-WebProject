@@ -76,9 +76,13 @@ app.get('/', (req, res) => {
  
 app.use('/', homeController);
 app.use('/', productController);
-app.use('/cart', cartController);
+app.use('/cart',restrict, cartController);
 app.use('/',searchController);
 app.use('/',adminController);
+<<<<<<< HEAD
+=======
+app.use('/',accountController);
+>>>>>>> d8177f273d83fb615688d640702a1a9b960d3767
 
 
 // catch 404 and forward to error handler
