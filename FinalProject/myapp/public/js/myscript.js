@@ -136,7 +136,7 @@ function leteRow(r) {
 
 var flag = 0;
 
-///Login
+/*///Login
 var CORRECT_USER = 'user';
 var CORRECT_PASS = 'user';
 var CORRECT_ADMIN = 'admin';
@@ -162,7 +162,7 @@ function onFormSubmit(e) {
     else if (username == CORRECT_ADMIN && password == CORRECT_PASSADMIN)
         window.open('../Web Project/admin.html');
     else alert('Bạn chưa có tài khoản :)');
-}
+}*/
 
 var map;
 function initMap() {
