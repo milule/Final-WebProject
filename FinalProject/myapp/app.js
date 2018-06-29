@@ -9,13 +9,17 @@ var wnumb = require('wnumb');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
-
+var handleLayoutMDW = require('./middleware/handleLayout'),
+    handle404MDW = require('./middleware/handle404'),
+    restrict = require('./middleware/restrict');
 
 var productController = require('./controller/ProductController');
 var cartController = require('./controller/CartController');
-var homeController = require('./controller/HomeController')
-var searchController = require('./controller/SearchController')
-var adminController = require('./controller/AdminController')
+var homeController = require('./controller/HomeController');
+var searchController = require('./controller/SearchController');
+var adminController = require('./controller/AdminController');
+var accountController = require('./controller/AccountController');
+
 var app = express();
 
 app.engine('hbs', exphbs({
@@ -69,6 +73,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
+app.use(handleLayoutMDW);
 
 app.get('/', (req, res) => {
     res.redirect('/home');
@@ -79,10 +84,7 @@ app.use('/', productController);
 app.use('/cart',restrict, cartController);
 app.use('/',searchController);
 app.use('/',adminController);
-<<<<<<< HEAD
-=======
 app.use('/',accountController);
->>>>>>> d8177f273d83fb615688d640702a1a9b960d3767
 
 
 // catch 404 and forward to error handler
