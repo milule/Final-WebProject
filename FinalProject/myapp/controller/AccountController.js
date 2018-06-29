@@ -61,16 +61,16 @@ router.post('/login', (req, res) => {
     });
 });
 
-// router.get('/profile/:user', restrict, (req, res) => {
-//     var user=req.params.user;
-//     accountRepo.compareusr(user).then(value =>{
-//             if (value[0]===user)
-//             {
-//                 accountRepo.showinfo(user)
-//             }
-//     })
-//     res.render('account/profile');
-// });
+router.get('/profile/:user', restrict, (req, res) => {
+    var user=req.params.user;
+    accountRepo.showingo(user).then(value =>{
+         var vm={
+             info:value
+         }   
+         res.render('account/profile');
+    })
+    
+});
 
 router.post('/logout', (req, res) => {
     req.session.isLogged = false;
