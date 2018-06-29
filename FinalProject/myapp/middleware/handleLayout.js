@@ -13,11 +13,8 @@ module.exports = (req, res, next) => {
             suppliers: rows,
             isLogged: req.session.isLogged,
             curUser: req.session.user,
-            cartSummary: cartRepo.getNumberOfItems(req.session.cart),
-            cartTotal: cartRepo.getTotal(req.session.cart)
+            cartSummary: cartRepo.getNumberOfItems(req.session.cart)
         };
-
-       console.log(res.locals.layoutVM.curUser);
 
         next();
     });

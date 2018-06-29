@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/style/tabstyle.css">
     <link rel="stylesheet" type="text/css" href="/style/texteff.css">
     <link rel="stylesheet" type="text/css" href="/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
     {{!-- {{{_sections.css}}} --}}
 </head>
 
@@ -180,7 +181,7 @@
                     </li>
 
                     <!-- Icon cart-->
-                    {{#if layoutVM.isLogged}}
+                     {{#if layoutVM.isLogged}}
                     <li>
                         <div class="header-wrapicon2">
                             <img src="/image/cart/shopping_cart.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
@@ -192,7 +193,7 @@
                                    <ul class="header-cart-wrapitem">
                                         <li class="header-cart-item">
                                             <div class="header-cart-item-img">
-                                                <img src="/image/cart/car1.jpg" alt="IMG">
+                                                <img src="/image/cart/{{Product.ProID}}.jpg" alt="IMG">
                                             </div>
                                             <div class="header-cart-item-txt">
                                                 <a href="/{{Product.CatID}}/{{Product.ProName}}" class="header-cart-item-name">
@@ -206,9 +207,9 @@
                                     </ul>
                                 {{/each}}
                                 </tbody>
-                                <div class="header-cart-total">
-                                    Tổng tiền: ${{layoutVM.cartTotal}}
-                                </div>
+                                {{!-- <div class="header-cart-total">
+                                    Tổng tiền: ${{number_format sum}}
+                                </div> --}}
                                 <div class="header-cart-buttons">
                                     <div class="header-cart-wrapbtn">
                                         <!-- Button -->
@@ -417,6 +418,22 @@
         });
     </script>
 
+    <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+    <script type="text/javascript">
+        $('.btn-addcart').each(function() {
+
+            $(this).on('click', function() {
+                swal("Thêm thành công", "Sản phẩm đã được thêm vào Giỏ hàng", "success");
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $('.btn-removecart').each(function() {
+            $(this).on('click', function() {
+                swal("Xóa thành công", "Sản phẩm đã được xóa khỏi Giỏ hàng", "success");
+            });
+        });
+    </script>
     {{{_sections.js}}}
 </body>
 

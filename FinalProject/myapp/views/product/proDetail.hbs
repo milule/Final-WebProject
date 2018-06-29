@@ -53,9 +53,13 @@
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Xuất sứ: {{Origin}}</h4>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Loại: {{../test}} </h4>
                     <h4> <span class="glyphicon glyphicon-flash " style="color: #ffcc00;line-height: 1.5 "></span>  Nhà sản xuất: {{Manufacturer}}</h4>
-                    <a class="btn-addcart ">
-                        <button class="btn btn-danger btn-lg ">Đặt mua hàng  <span class="glyphicon glyphicon-shopping-cart "></span></button>
-                    </a>
+
+                    <form id="frmAddItem" method="post" action="/cart/add">
+                            <input type="hidden" name="proId" value="{{ProID}}">
+                            <input type="hidden" name="quantity" id="txtQ" value="1">
+                            <button class="btn btn-danger btn-lg btn-addcart">Đặt mua hàng  <span class="glyphicon glyphicon-shopping-cart "></span></button>
+                        </form>
+                        
                 </div>
                 <div class="col-md-5 "> 
                     <div class="panel panel-default ">

@@ -11,24 +11,28 @@ router.get('/', (req, res) => {
         var p = productRepo.single(cartItem.ProId);
         arr_p.push(p);
     }
-    console.log('cart');
-    console.log(req.session.cart);
+    // console.log('cart');
+    // console.log(req.session.cart);
     var items = [];
-    var n = 0;
+    var sum = 0;
     Promise.all(arr_p).then(result => {
         for (var i = result.length - 1; i >= 0; i--) {
             var pro = result[i][0];
-            n += pro.Price * req.session.cart[i].Quantity;
+            
             var item = {
                 Product: pro,
                 Quantity: req.session.cart[i].Quantity,
-                Amount: pro.Price * req.session.cart[i].Quantity
+                Amount: pro.Price * req.session.cart[i].Quantity,
             };
+            sum += parseInt(pro.Price * req.session.cart[i].Quantity);
+            console.log('sum: ');
+            console.log(sum);
             items.push(item);
         }
 
         var vm = {
-            items: items
+            items: items,
+            sum: sum
         };
         res.render('cart/index', vm);
     });
@@ -37,7 +41,7 @@ router.get('/', (req, res) => {
 router.post('/add', (req, res) => {
     var item = {
         ProId: req.body.proId,
-        Quantity: +req.body.quantity
+        Quantity: +req.body.quantity,
     };
 
     cartRepo.add(req.session.cart, item);
@@ -45,8 +49,8 @@ router.post('/add', (req, res) => {
 });
 
 router.post('/remove', (req, res) => {
-    console.log('req.session.cart ' + req.session.cart);
-    console.log('req.body.ProId ' + req.body.ProId);
+    // console.log('req.session.cart ' + req.session.cart);
+    // console.log('req.body.ProId ' + req.body.ProId);
     cartRepo.remove(req.session.cart, req.body.ProId);
     res.redirect(req.headers.referer);
 });

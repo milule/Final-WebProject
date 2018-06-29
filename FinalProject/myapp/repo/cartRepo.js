@@ -2,7 +2,6 @@ exports.getNumberOfItems = cart => {
     if (!cart) {
         return -1;
     }
-    console.log(cart);
     var n = 0;
     for (var i = cart.length - 1; i >= 0; i--) {
         n += cart[i].Quantity;
@@ -11,25 +10,11 @@ exports.getNumberOfItems = cart => {
     return n;
 }
 
-exports.getTotal = cart => {
-    if (!cart) {
-        return -1;
-    }
-    console.log(cart);
-    var n = 0;
-    for (var i = cart.length - 1; i >= 0; i--) {
-        var m = cart[i].Quantity;
-        var b = cart[i].Price;
-        n += m*b;
-    }
-    console.log(n);
-    return n;
-}
-
 exports.add = (cart, item) => {
+    //console.log('item' + item);
     for (var i = cart.length - 1; i >= 0; i--) {
-        if (cart[i].ProID === item.product.ProID) {
-            cart[i].Quantity += item.quantity;
+        if (cart[i].ProId === item.ProId) {
+            cart[i].Quantity += item.Quantity;
             return;
         }
     }
