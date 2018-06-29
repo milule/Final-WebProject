@@ -17,7 +17,7 @@
                             <h1 class="garm" style="font-size: 20px;font-weight: bold">Giới thiệu</h1>
                             <p>"Chào mừng đến với Showroom Quả Tạ.Đây là nơi chuyên cung cấp các loại xe siêu sang, siêu xịn
                                 với mức giá trên trời và không dành cho thường dân ahihi."</p>
-                            <a href="/byCat/1" class="btn btn-primary btn-lg" style="margin-bottom: 25px">XEM THÊM</a>
+                            <a href="/category/Sport" class="btn btn-primary btn-lg" style="margin-bottom: 25px">XEM THÊM</a>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                             <h1 class="garm" style="font-size: 20px;font-weight: bold">Đặc biệt</h1>
                             <p>"Website mang đến đầy đủ tính năng thuận tiện nhất cho người mua mà không ở đâu có được. Được
                                 trải nghiệm nhiều điều thú vị như đạp vịt, trượt cầu tuột."</p>
-                            <a href="/byCat/2" class="btn btn-primary btn-lg" style="margin-bottom: 25px">XEM THÊM</a>
+                            <a href="/category/Sedan" class="btn btn-primary btn-lg" style="margin-bottom: 25px">XEM THÊM</a>
                         </div>
                     </div>
                 </div>
@@ -87,8 +87,8 @@
                                     <span style="color: white">Số lượt xem:
                                         <span class="countview">{{Seen}}</span>
                                     </span>
-                                    <h4 class="price"> {{Price}}&euro;</h4>
-                                    <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
+                                    <h4 class="price"> {{number_format Price}}&dollar;</h4>
+                                    <span class="date" style="color: white;font-weight: bold">{{DateAdded}}</span>
                                     <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
                                     <br>
                                     <div class="wishtxt">
@@ -117,7 +117,7 @@
         <div id="menu1" class="tab-pane fade in active">
             <div class="grid ">
                 <div class="row ">
-                    {{#each dateS}}
+                    {{#each quantityS}}
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
                         <div class="txthover ">
                             <img src="/image/products/{{ProID}}/1.jpg " alt="car1 " style="height: 389px;width: 109%;">
@@ -137,8 +137,8 @@
                                     <span style="color: white">Số lượt xem:
                                         <span class="countview">{{Seen}}</span>
                                     </span>
-                                    <h4 class="price"> {{Price}}&euro;</h4>
-                                    <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
+                                    <h4 class="price"> {{number_format Price}}&dollar;</h4>
+                                    <span class="date" style="color: white;font-weight: bold">{{DateAdded}}</span>
                                     <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
                                     <br>
                                     <div class="wishtxt">
@@ -162,8 +162,8 @@
                     </div>
                     {{/each}}
                 </div>
-            </div>           
-        </div>        
+            </div>
+        </div>
         <div id="menu2" class="tab-pane fade in active">
             <div class="grid ">
                 <div class="row ">
@@ -187,8 +187,8 @@
                                     <span style="color: white">Số lượt xem:
                                         <span class="countview">{{Seen}}</span>
                                     </span>
-                                    <h4 class="price"> {{Price}}&euro;</h4>
-                                    <span class="date" style="color: white;font-weight: bold">May 05, 2018</span>
+                                    <h4 class="price"> {{number_format Price}}&dollar;</h4>
+                                    <span class="date" style="color: white;font-weight: bold">{{DateAdded}}</span>
                                     <a href="/{{CatID}}/{{ProName}}" class="btn btn-default">Xem thêm</a>
                                     <br>
                                     <div class="wishtxt">
@@ -212,6 +212,6 @@
                     </div>
                     {{/each}}
                 </div>
-            </div>                       
+            </div>
         </div>
     </div>
