@@ -1,6 +1,17 @@
 {{#section 'title'}} Product List {{/section}}
-	<div class="allcontain brandstyle" style="margin-top:20px;color:rgb(26, 76, 109);font-weight:bold;
-	padding:80px;text-align:center;>
+
+{{#section 'js'}}
+<script type="text/javascript">
+	$('.addItem').on('click', function() {
+	    var id = $(this).data('proId');
+	    $('#txtP').val(id);
+	    $('#txtQ').val(1);
+	    $('#frmAddItem').submit();
+	});
+</script>
+{{/section}}
+
+	<div class="allcontain brandstyle" style="margin-top:20px;color:rgb(26, 76, 109);font-weight:bold;padding:80px;text-align:center;">
 		<img src="/image/brand.png" style="width: 400px;height: 188px;text-align: center;">
 		<h1 style="font-size:50px">{{categoryName}}</h1>
 	</div>
@@ -33,6 +44,14 @@
 				<h1 class="panel-title" style="text-align: center;font-size:30px">Sản Phẩm</h1>
 			</div>
 			<div class="row" style="margin-top:20px;">
+
+				{{!-- //Them --}}
+				<form id="frmAddItem" method="post" action="/cart/add">
+					<input  name="proId" id="txtP">
+					<input type="hidden" name="quantity" id="txtQ">
+				</form>
+				{{!-- --}}
+
 				{{#each products}}
 
 				<div class="col-sm-3 col-md-4 ">
@@ -47,9 +66,16 @@
 									<span class="glyphicon glyphicon-menu-right"></span>
 									Xem chi tiết
 								</a>
-								<a href="#" class="btn btn-danger" role="button">
+
+								{{#if ../layoutVM.isLogged}}
+									<a data-proid="{{ProID}}" href="javascript:;" class="btn btn-danger"> 
+										<span class="glyphicon glyphicon-shopping-cart"></span>
+									</a>
+								{{/if}}
+
+								{{!-- <a href="#" class="btn btn-danger" role="button">
 									<span class="glyphicon glyphicon-shopping-cart"></span>
-								</a>
+								</a> --}}
 							</p>
 						</div>
 					</div>
