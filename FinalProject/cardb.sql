@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Project
+ Source Server         : MySQL
  Source Server Type    : MySQL
- Source Server Version : 100131
+ Source Server Version : 50719
  Source Host           : localhost:3306
  Source Schema         : cardb
 
  Target Server Type    : MySQL
- Target Server Version : 100131
+ Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 24/06/2018 17:34:09
+ Date: 29/06/2018 11:29:17
 */
 
 SET NAMES utf8mb4;
@@ -57,10 +57,10 @@ CREATE TABLE `products`  (
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO `products` VALUES (1, 'BMW M4', 'Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực', 'BMW M4 được bán dưới dạng một chiếc coupe hoặc convertible, tính năng quan trọng nhất là chiếc V-8 6.2 lít tăng áp làm cho 650 mã lực và 650 lb-ft', 700000, 1, 50, 'BMW', 0, 'Germany', '20/06/2018');
-INSERT INTO `products` VALUES (2, 'BMW M6 Gran', 'Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực', 'BMW M6 Gran là vua của những chiếc xe cơ bắp. Cả hai chiếc coupe và nhà chuyển đổi một hung dữ 650 mã lực tăng áp 6.2 lít V-8 tặng bởi Corvette Z06', 50000, 1, 40, 'BMW', 0, 'Germany', '20/06/2018');
+INSERT INTO `products` VALUES (1, 'BMW M4', 'Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực', 'BMW M4 được bán dưới dạng một chiếc coupe hoặc convertible, tính năng quan trọng nhất là chiếc V-8 6.2 lít tăng áp làm cho 650 mã lực và 650 lb-ft', 700000, 1, 50, 'BMW', 2, 'Germany', '20/06/2018');
+INSERT INTO `products` VALUES (2, 'BMW M6 Gran', 'Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực', 'BMW M6 Gran là vua của những chiếc xe cơ bắp. Cả hai chiếc coupe và nhà chuyển đổi một hung dữ 650 mã lực tăng áp 6.2 lít V-8 tặng bởi Corvette Z06', 50000, 1, 40, 'BMW', 1, 'Germany', '20/06/2018');
 INSERT INTO `products` VALUES (3, 'BMW I8', 'Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực', 'BWm I8 coupe là siêu xe cực kỳ mạnh mẽ. Một người bạn V-10 5.2 lít kỳ lạ với một ly hợp kép tự động bảy tốc độ . Mã lực dao động từ 572', 203295, 1, 120, 'BMW', 0, 'Germany', '20/06/2018');
-INSERT INTO `products` VALUES (4, 'Lexus RC', 'Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực', 'Lexus RC với siêu xe nhẹ, khí động học, dữ dội và 720S là bằng chứng. Một đôi-turbo 2.0 lít V-8 twin-turbo ổ đĩa bánh sau thông qua một bảy tốc độ tự động', 288845, 1, 90, 'Lexus', 0, 'Japan', '22/06/2018');
+INSERT INTO `products` VALUES (4, 'Lexus RC', 'Siêu xe chuyên dụng để chạy Grab, có động cơ 1000 mã lực', 'Lexus RC với siêu xe nhẹ, khí động học, dữ dội và 720S là bằng chứng. Một đôi-turbo 2.0 lít V-8 twin-turbo ổ đĩa bánh sau thông qua một bảy tốc độ tự động', 288845, 1, 90, 'Lexus', 2, 'Japan', '22/06/2018');
 INSERT INTO `products` VALUES (5, 'Mercedes-Benz S65 AMG', 'Mercedes-Benz cùng sử dụng chung động cơ V8, tăng áp kép', 'Mercedes-Benz S65 AMG trang bị động cơ V12, tăng áp kép, dung tích 6 lít  cho công suất cực đại 621 mã lực, mô-men xoắn cực đại 1.000 Nm', 58450, 1, 45, 'Mercedes-Benz', 0, 'Germany', '16/06/2018');
 INSERT INTO `products` VALUES (6, 'Lexus LC Hybrid', 'Xe có khả năng tăng tốc từ 0 lên 100 km/h trong 3,7 giây', 'Lexus LC Hybrid trang bị động cơ V8 tăng áp 4.0 lít cho công suất cực đại 560 mã lực và mô-men xoắn cực đại 700 Nm', 113395, 1, 60, 'Lexus', 0, 'Japan', '22/06/2018');
 INSERT INTO `products` VALUES (7, 'Porsche Panamera Turbo S', 'Xe chỉ mất 3,6 giây để tăng tốc từ 0 lên 100 km/h, tốc độ tối đa trên 310 km/h.', 'Porsche Panamera trang bị động cơ V8, tăng áp kép, dung tích 4,8 lít cho công suất cực đại 570 mã lực và mô-men xoắn cực đại 750 Nm', 256550, 1, 10, 'Porsche', 0, 'Germany', '18/06/2018');
@@ -97,5 +97,29 @@ INSERT INTO `products` VALUES (37, 'Mercedes-AMG GT', 'Mercedes-AMG GT Roadster 
 INSERT INTO `products` VALUES (38, 'BMW 230i Convertible ', 'BMW 230i được biết tới với khả năng, đốn gục mọi ánh nhìn của người đối diện', 'BMW 230i được trang bị động cơ tăng áp 2 lít bốn xi-lanh sản sinh công suất 248 mã lực và mô-men xoắn 350Nm tăng tốc 0-100km/h trong 4,2 giây một cách thật ấn tượng', 57812, 2, 44, 'BMW', 0, 'Germany', '20/06/2018');
 INSERT INTO `products` VALUES (39, 'Mercedes-Maybach 6 ', 'Mercedes-Maybach 6 cho biết F-Type hội tụ đầy đủ mọi yếu tố mà người dùng mong đợi', 'Xe với mẫu V8 dung tích 5.0 lít, sản sinh lên đến 548-570 mã lực, với khả năng tăng tốc ấn tượng từ 0-100km/h chỉ trong 3.7s. Góp phần không nhỏ cho sự linh hoạt', 78910, 2, 37, 'Mercedes-Benz', 0, 'Germany', '16/06/2018');
 INSERT INTO `products` VALUES (40, 'Mercedes S500L', 'được chú trọng trang bị các đặc tính, công nghệ hàng đầu nhất, đảm bảo hỗ trợ con xe vận hành xuất s', 'Tính năng kiểm soát lối đi bằng khối hệ thống Distronic tiện lợi là điểm cộng lớn giúp người lái xe cảm nhận thấy dễ chịu và thoải mái hơn nhiều, đặc biệt là khi lái xe đường dài. Sở hữu khối hệ thống này có thể giúp người điều khiển lái hàng trăm km không cần đạp ga. chiếc xe còn có khả năng đánh giá, nhận ra và phản xạ với các phương tiện, chướng ngại xung quanh và xử lý các phương án kịp thời nếu như có nguy cơ xẩy ra va chạm', 319000, 1, 10, 'Mercedes-Benz', 0, 'Germany', '16/06/2018');
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `f_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `f_Username` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `f_Password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `f_Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `f_Email` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `f_DOB` date NOT NULL,
+  `f_Permission` int(11) NOT NULL,
+  PRIMARY KEY (`f_ID`) USING BTREE
+) ENGINE = MyISAM AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (1, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'Tayce', 'ad@gmail.com', '2017-09-11', 0);
+INSERT INTO `users` VALUES (4, 'a', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'a', 'a', '2017-09-11', 0);
+INSERT INTO `users` VALUES (5, 'b', '3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d', 'b', 'b', '2018-06-24', 0);
+INSERT INTO `users` VALUES (6, 'c', '2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6', 'c', 'c', '2018-07-07', 0);
+INSERT INTO `users` VALUES (7, 'd', '18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4', 'd', 'd', '2018-07-07', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
