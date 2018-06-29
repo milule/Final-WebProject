@@ -136,33 +136,6 @@ function leteRow(r) {
 
 var flag = 0;
 
-///Login
-var CORRECT_USER = 'user';
-var CORRECT_PASS = 'user';
-var CORRECT_ADMIN = 'admin';
-var CORRECT_PASSADMIN = 'admin';
-
-var inputUsername = document.getElementById('username');
-var inputPassWord = document.getElementById('password');
-
-var formLogin = document.getElementById('form-login');
-
-if (formLogin.attachEvent)
-    formLogin.attachEvent('submit', onFormSubmit);
-else
-    formLogin.addEventListener('submit', onFormSubmit);
-
-function onFormSubmit(e) {
-    var username = inputUsername.value;
-    var password = inputPassWord.value;
-    if (username == CORRECT_USER && password == CORRECT_PASS) {
-        flag = 1;
-        window.open('../Web Project/user.html');
-    }
-    else if (username == CORRECT_ADMIN && password == CORRECT_PASSADMIN)
-        window.open('../Web Project/admin.html');
-    else alert('Bạn chưa có tài khoản :)');
-}
 
 var map;
 function initMap() {
