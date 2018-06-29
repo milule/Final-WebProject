@@ -377,7 +377,7 @@
     </script>
     
     <script src="/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    
+
     <script type="text/javascript">
         $('#txtDOB').datepicker({
             format: 'd/m/yyyy',
@@ -397,6 +397,15 @@
 
             return true;
         };
+    </script>
+    
+    <script type="text/javascript">
+        $('.addItem').on('click', function() {
+            var id = $(this).data('proId');
+            $('#txtP').val(id);
+            $('#txtQ').val(1);
+            $('#frmAddItem').submit();
+        });
     </script>
 
     <script type="text/javascript">

@@ -80,10 +80,10 @@ app.get('/', (req, res) => {
  
 app.use('/', homeController);
 app.use('/', productController);
-app.use('/cart', cartController);
+app.use('/cart',restrict, cartController);
 app.use('/',searchController);
 app.use('/',adminController);
-app.use('/',restrict,accountController);
+app.use('/',accountController);
 
 
 // catch 404 and forward to error handler
