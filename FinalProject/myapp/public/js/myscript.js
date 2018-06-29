@@ -134,7 +134,6 @@ function leteRow(r) {
 };
 
 
-var flag = 0;
 
 
 var map;
