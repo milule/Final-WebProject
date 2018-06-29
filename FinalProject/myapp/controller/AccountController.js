@@ -2,6 +2,8 @@ var express = require('express');
 var SHA256 = require('crypto-js/sha256');
 var accountRepo = require('../repo/AccountRepo');
 var restrict = require('../middleware/restrict');
+var test = require('../middleware/handleLayout');
+
 var moment = require('moment');
 
 var router = express.Router();
@@ -61,14 +63,14 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.get('/profile/:user', restrict, (req, res) => {
-    var user=req.params.user;
-    accountRepo.showingo(user).then(value =>{
-         var vm={
-             info:value
-         }   
-         res.render('account/profile');
-    })
+router.get('/profile', test, (req, res) => {
+    console.log('asdasd')
+    // accountRepo.showinfo(user).then(value =>{
+    //      var vm={
+    //          info:value
+    //      }   
+    //      res.render('account/profile');
+    // })
     
 });
 

@@ -8,11 +8,12 @@ router.get('/', (req, res) => {
     var arr_p = [];
     for (var i = 0; i < req.session.cart.length; i++) {
         var cartItem = req.session.cart[i];
+        console.log(cartItem)
         var p = productRepo.single(cartItem.ProId);
         arr_p.push(p);
     }
-    // console.log('cart');
-    // console.log(req.session.cart);
+    console.log('cart');
+    console.log(req.session.cart);
     var items = [];
     var sum = 0;
     Promise.all(arr_p).then(result => {

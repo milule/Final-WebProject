@@ -80,7 +80,7 @@ app.get('/', (req, res) => {
  
 app.use('/', homeController);
 app.use('/', productController);
-app.use('/cart',restrict, cartController);
+app.use('/cart', cartController);
 app.use('/',searchController);
 app.use('/',adminController);
 app.use('/',accountController);

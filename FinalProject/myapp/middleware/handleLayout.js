@@ -1,6 +1,5 @@
 var categoryRepo = require('../repo/CategoryRepo'),
     cartRepo = require('../repo/cartRepo');
-
 module.exports = (req, res, next) => {
 
 	if (req.session.isLogged === undefined) {
@@ -13,7 +12,7 @@ module.exports = (req, res, next) => {
             suppliers: rows,
             isLogged: req.session.isLogged,
             curUser: req.session.user,
-            cartSummary: cartRepo.getNumberOfItems(req.session.cart)
+            cartSummary: cartRepo.getNumberOfItems(req.session.cart),
         };
 
         next();
