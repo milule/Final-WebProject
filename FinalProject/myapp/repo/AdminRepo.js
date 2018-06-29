@@ -20,8 +20,8 @@ exports.loadAll= (offset) =>{
 
 
 exports.loadAllC = () => {
-    var sql =`select products.CatID,categories.CatName,count(*) as totalC from products left
-    join categories on products.CatID = categories.CatID group by products.CatID`
+    var sql =`select categories.CatID,categories.CatName,count(products.CatID) as totalC from products
+    right join categories on products.CatID = categories.CatID group by products.CatID,categories.CatID order by categories.CatID asc`
     return db.load(sql);
 }
 
@@ -32,6 +32,11 @@ exports.loadAllManu = () => {
 
 exports.deletePro = (proid) => {
     var sql = `delete from products where ProID=${proid}`
+    return db.save(sql);
+}
+
+exports.deleteCat = (catid) => {
+    var sql = `delete from categories where CatID=${catid}`
     return db.save(sql);
 }
 

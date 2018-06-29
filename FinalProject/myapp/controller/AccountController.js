@@ -61,9 +61,16 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.get('/profile', restrict, (req, res) => {
-    res.render('account/profile');
-});
+// router.get('/profile/:user', restrict, (req, res) => {
+//     var user=req.params.user;
+//     accountRepo.compareusr(user).then(value =>{
+//             if (value[0]===user)
+//             {
+//                 accountRepo.showinfo(user)
+//             }
+//     })
+//     res.render('account/profile');
+// });
 
 router.post('/logout', (req, res) => {
     req.session.isLogged = false;
@@ -71,5 +78,7 @@ router.post('/logout', (req, res) => {
     // req.session.cart = [];
     res.redirect(req.headers.referer);
 });
+
+
 
 module.exports = router;

@@ -325,6 +325,7 @@
                   <div class="col-12 form-group">
                     <label for="usr">Tên loại</label>
                     <input type="text" class="form-control" name="catn">
+
                   </div>
                 </div>
                 <div class="lightboxe-footer">
@@ -349,9 +350,15 @@
                 <td>{{CatName}}</td>
                 <td>{{totalC}}</td>
                 <td>
-                  <button class="btn btn-danger">
-                    <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
-                  </button>
+                  <form action="/delete" method="post">
+                    <div class="form-group">
+                      <input type="hidden" id="" name="CatID" value='{{CatID}}'>
+                      <input type="hidden" id="" name="flag" value='1'>
+                    </div>
+                    <button class="btn btn-danger">
+                      <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                  </form>
                 </td>
               </tr>
               {{/each}}
@@ -361,10 +368,6 @@
       </div>
       <div class="tab-pane  fade" id="tabBody2" role="tabpanel" aria-labelledby="tab2" aria-hidden="true" tabindex="0">
         <div class="allcontain">
-          <div class="row">
-            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
-              <span class="glyphicon glyphicon-plus"></span> Thêm hãng SX</button>
-          </div>
           <table class="table table-bordered">
             <thead style="color:white;background-color:maroon">
               <tr>
@@ -380,11 +383,6 @@
                 <td>{{Manufacturer}}</td>
                 <td>{{totalM}}</td>
                 <td>{{number_format totalP}}&dollar;</td>
-                <td>
-                  <button class="btn btn-danger">
-                    <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
-                  </button>
-                </td>
               </tr>
               {{/each}}
             </tbody>

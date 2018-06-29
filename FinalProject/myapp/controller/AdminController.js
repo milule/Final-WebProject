@@ -48,10 +48,17 @@ router.get('/dashboard', (req, res) => {
 
 
 router.post('/delete', (req, res) => {
+    if (req.body.CatID ===1)
+    {
+        adminRepo.deletePro(req.body.CatID).then(value => {
+
+            res.redirect('/dashboard');
+        });
+    }
     adminRepo.deletePro(req.body.ProID).then(value => {
 
         res.redirect('/dashboard');
-    });;
+    });
 });
 
 router.post('/add', (req, res) => {
